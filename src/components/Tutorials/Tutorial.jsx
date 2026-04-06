@@ -6,6 +6,7 @@ import SelectTab from "./Select";
 import FormTab from "./Form";
 import TableTab from "./Table";
 import DatePickerTab from "./DatePicker";
+import SpinTab from "./Spin";
 
 export default function Tutorial() {
     const [open, setOpen] = useState(false); // modal is closed initially
@@ -40,6 +41,11 @@ export default function Tutorial() {
             key: "6",
             label: "DatePicker",
             children: <DatePickerTab />
+        },
+        {
+            key: "7",
+            label: "Spinner",
+            children: <SpinTab />
         },
     ];
 
