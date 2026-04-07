@@ -7,6 +7,7 @@ import FormTab from "./Form";
 import TableTab from "./Table";
 import DatePickerTab from "./DatePicker";
 import SpinTab from "./Spin";
+import ProgressTab from "./Progress";
 
 export default function Tutorial() {
     const [open, setOpen] = useState(false); // modal is closed initially
@@ -46,6 +47,11 @@ export default function Tutorial() {
             key: "7",
             label: "Spinner",
             children: <SpinTab />
+        },
+        {
+            key: "8",
+            label: "ProgressBar",
+            children: <ProgressTab />
         },
     ];
 
