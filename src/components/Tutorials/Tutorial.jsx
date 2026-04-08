@@ -10,6 +10,7 @@ import SpinTab from "./Spin";
 import ProgressTab from "./Progress";
 import PaginationTab from "./Pagination";
 import TableTab1 from "./Table1";
+import IconsTab from "./Icons";
 
 export default function Tutorial() {
     const [open, setOpen] = useState(false); // modal is closed initially
@@ -64,6 +65,11 @@ export default function Tutorial() {
             key: "10",
             label: "Table1",
             children: <TableTab1 />
+        },
+        {
+            key: "11",
+            label: "Icons",
+            children: <IconsTab />
         },
     ];
 
