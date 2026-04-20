@@ -11,6 +11,7 @@ import ProgressTab from "./Progress";
 import PaginationTab from "./Pagination";
 import TableTab1 from "./Table1";
 import IconsTab from "./Icons";
+import TableCrudTab from "./TableCrud";
 
 export default function Tutorial() {
     const [open, setOpen] = useState(false); // modal is closed initially
@@ -70,6 +71,11 @@ export default function Tutorial() {
             key: "11",
             label: "Icons",
             children: <IconsTab />
+        },
+        {
+            key: "12",
+            label: "TableCrud",
+            children: <TableCrudTab />
         },
     ];
 
