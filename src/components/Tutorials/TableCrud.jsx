@@ -1,4 +1,4 @@
-import { Button, Table } from "antd";
+import { Button, Table, Modal } from "antd";
 import { useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
@@ -59,7 +59,7 @@ export default function TableCrudTab() {
                         <EditOutlined />
                         <DeleteOutlined onClick={() => {
                             onDeleteStudent(record)
-                        }} style = {{color: "red", marginLeft: 12}}/>
+                        }} style={{ color: "red", marginLeft: 12 }} />
                     </>
                 );
             },
@@ -79,10 +79,15 @@ export default function TableCrudTab() {
         });
     };
     const onDeleteStudent = (record) => {
-        setDataSource(pre=>{
-            return pre.filter(student => student.id !== record.id);
-        })
-    }
+        Modal.confirm({
+            title: 'Are you sure, you want to delete this student record?',
+            onOk: () => {
+                setDataSource((pre) => {
+                    return pre.filter((student) => student.id !== record.id);
+                });
+            },
+        });
+    };
     return (
         <div>
             <Button onClick={onAddStudent}>Add a new Student</Button>
