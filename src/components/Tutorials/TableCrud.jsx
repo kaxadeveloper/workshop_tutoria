@@ -1,5 +1,6 @@
 import { Button, Table } from "antd";
 import { useState } from "react";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 export default function TableCrudTab() {
     const [dataSource, setDataSource] = useState([
@@ -48,22 +49,40 @@ export default function TableCrudTab() {
             key: '4',
             title: 'Address',
             dataIndex: 'address'
-        }
-    ]
+        },
+        {
+            key: '5',
+            title: 'Actions',
+            render: (record) => {
+                return (
+                    <>
+                        <EditOutlined />
+                        <DeleteOutlined onClick={() => {
+                            onDeleteStudent(record)
+                        }} style = {{color: "red", marginLeft: 12}}/>
+                    </>
+                );
+            },
+        },
+    ];
 
     const onAddStudent = () => {
         const randomNumber = parseInt(Math.random() * 1000)
         const newStudent = {
             id: randomNumber,
-            name: 'Name '+randomNumber,
+            name: 'Name ' + randomNumber,
             email: randomNumber + '@gmail.com',
             address: 'Address ' + randomNumber,
         };
         setDataSource(pre => {
-            return [...pre, newStudent]
+            return [...pre, newStudent];
         });
     };
-
+    const onDeleteStudent = (record) => {
+        setDataSource(pre=>{
+            return pre.filter(student => student.id !== record.id);
+        })
+    }
     return (
         <div>
             <Button onClick={onAddStudent}>Add a new Student</Button>
