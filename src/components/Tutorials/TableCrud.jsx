@@ -1,8 +1,9 @@
-import { Button, Table, Modal } from "antd";
+import { Button, Table, Modal, Input } from "antd";
 import { useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 export default function TableCrudTab() {
+    const [isEditing, setIsEditing] = useState(false);
     const [dataSource, setDataSource] = useState([
         {
             id: 1,
@@ -56,7 +57,9 @@ export default function TableCrudTab() {
             render: (record) => {
                 return (
                     <>
-                        <EditOutlined />
+                        <EditOutlined onClick={() => {
+                            onEditStudent(record);
+                        }} />
                         <DeleteOutlined onClick={() => {
                             onDeleteStudent(record)
                         }} style={{ color: "red", marginLeft: 12 }} />
@@ -81,12 +84,18 @@ export default function TableCrudTab() {
     const onDeleteStudent = (record) => {
         Modal.confirm({
             title: 'Are you sure, you want to delete this student record?',
+            okText: "Yes",
+            okType: "danger",
             onOk: () => {
                 setDataSource((pre) => {
                     return pre.filter((student) => student.id !== record.id);
                 });
             },
         });
+    };
+
+    const onEditStudent = (record) => {
+        setIsEditing(true);
     };
     return (
         <div>
@@ -95,6 +104,19 @@ export default function TableCrudTab() {
                 columns={columns}
                 dataSource={dataSource}
             ></Table>
+            <Modal
+                title="Edit Student"
+                visible={isEditing}
+                okText="Save"
+                onCancel={() => {
+                    setIsEditing(false);
+                }}
+                onOk={() => {
+                    setIsEditing(false);
+                }}
+            >
+             <Input />
+            </Modal>
         </div>
-    )
+    );
 }
