@@ -42,7 +42,8 @@ export default function TableSearchTab() {
                             placeholder="Type text here"
                             value={selectedKeys[0]}
                             onChange={(e) => {
-                                setSelectedKeys(e.target.value ? [e.target.value] : [])
+                                setSelectedKeys(e.target.value ? [e.target.value] : []);
+                                confirm({ closeDropdown: false });
                             }}
                             onPressEnter={() => {
                                 confirm();
@@ -63,7 +64,7 @@ export default function TableSearchTab() {
                             onClick={() => {
                                 clearFilters();
                             }}
-                            style={{backgroundColor: "red", color: "white"}}
+                            style={{ backgroundColor: "red", color: "white" }}
                         >
                             Reset
                         </Button>
@@ -90,6 +91,7 @@ export default function TableSearchTab() {
     return (
         <div>
             <Table
+                style={{ display: 'flex', flex: 1, margin: 10 }}
                 columns={columns}
                 dataSource={dataSource}
             >
