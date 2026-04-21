@@ -1,46 +1,71 @@
-import { Table } from "antd";
+import { Input, Table } from "antd";
 import { useState } from "react";
+import { SearchOutlined } from "@ant-design/icons";
 
 export default function TableSearchTab() {
     const [dataSource, setDataSource] = useState([
         {
             name: "John",
             age: 32,
-            address: "New York"
+            address: "New York",
         },
         {
             name: "Jim",
             age: 33,
-            address: "Sydney"
+            address: "Sydney",
         },
         {
             name: "David",
             age: 40,
-            address: "Japan"
+            address: "Japan",
         },
         {
             name: "James",
             age: 36,
-            address: "New York"
+            address: "New York",
         },
         {
             name: "Sam",
             age: 40,
-            address: "Sydney"
+            address: "Sydney",
         },
     ]);
     const columns = [
         {
             title: 'Name',
-            dataIndex: 'name'
+            dataIndex: 'name',
+            filterDropdown: ({ setSelectedKeys, selectedKeys, confirm }) => {
+                return (
+                <Input 
+                autoFocus 
+                placeholder="Type text here" 
+                value={selectedKeys[0]}
+                onChange = {(e) => {
+                    setSelectedKeys(e.target.value?[e.target.value]:[])
+                }}
+                onPressEnter={() => { 
+                    confirm();
+                }}
+                onBlur={() => { 
+                    confirm();
+                }}
+                ></Input>
+                );
+            },
+            filterIcon: () => {
+                return <SearchOutlined />;
+            },
+            onFilter:(value, record) => {
+                return record.name.toLowerCase().includes(value.toLowerCase())
+            },
         },
         {
             title: 'Age',
-            dataIndex: 'age'
+            dataIndex: 'age',
         },
         {
             title: 'Address',
-            dataIndex: 'address'
+            dataIndex: 'address',
         }
     ]
 
