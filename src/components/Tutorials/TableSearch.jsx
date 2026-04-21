@@ -81,10 +81,96 @@ export default function TableSearchTab() {
         {
             title: 'Age',
             dataIndex: 'age',
+            filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => {
+                return (
+                    <>
+                        <Input
+                            autoFocus
+                            placeholder="Type text here"
+                            value={selectedKeys[0]}
+                            onChange={(e) => {
+                                setSelectedKeys(e.target.value ? [e.target.value] : []);
+                                confirm({ closeDropdown: false });
+                            }}
+                            onPressEnter={() => {
+                                confirm();
+                            }}
+                            onBlur={() => {
+                                confirm();
+                            }}
+                        ></Input>
+                        <Button
+                            onClick={() => {
+                                confirm();
+                            }}
+                            type="primary"
+                        >
+                            Search
+                        </Button>
+                        <Button
+                            onClick={() => {
+                                clearFilters();
+                            }}
+                            style={{ backgroundColor: "red", color: "white" }}
+                        >
+                            Reset
+                        </Button>
+                    </>
+                );
+            },
+            filterIcon: () => {
+                return <SearchOutlined />;
+            },
+            onFilter: (value, record) => {
+                return record.age == value;
+            },
         },
         {
             title: 'Address',
             dataIndex: 'address',
+            filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => {
+                return (
+                    <>
+                        <Input
+                            autoFocus
+                            placeholder="Type text here"
+                            value={selectedKeys[0]}
+                            onChange={(e) => {
+                                setSelectedKeys(e.target.value ? [e.target.value] : []);
+                                confirm({ closeDropdown: false });
+                            }}
+                            onPressEnter={() => {
+                                confirm();
+                            }}
+                            onBlur={() => {
+                                confirm();
+                            }}
+                        ></Input>
+                        <Button
+                            onClick={() => {
+                                confirm();
+                            }}
+                            type="primary"
+                        >
+                            Search
+                        </Button>
+                        <Button
+                            onClick={() => {
+                                clearFilters();
+                            }}
+                            style={{ backgroundColor: "red", color: "white" }}
+                        >
+                            Reset
+                        </Button>
+                    </>
+                );
+            },
+            filterIcon: () => {
+                return <SearchOutlined />;
+            },
+            onFilter: (value, record) => {
+                return record.address.toLowerCase().includes(value.toLowerCase())
+            },
         }
     ]
 
