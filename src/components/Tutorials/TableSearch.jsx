@@ -63,7 +63,7 @@ export default function TableSearchTab() {
                             onClick={() => {
                                 clearFilters();
                             }}
-                            type="danger"
+                            style={{backgroundColor: "red", color: "white"}}
                         >
                             Reset
                         </Button>
