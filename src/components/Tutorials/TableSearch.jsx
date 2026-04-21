@@ -1,4 +1,4 @@
-import { Input, Table } from "antd";
+import { Button, Input, Table } from "antd";
 import { useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 
@@ -34,28 +34,46 @@ export default function TableSearchTab() {
         {
             title: 'Name',
             dataIndex: 'name',
-            filterDropdown: ({ setSelectedKeys, selectedKeys, confirm }) => {
+            filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => {
                 return (
-                <Input 
-                autoFocus 
-                placeholder="Type text here" 
-                value={selectedKeys[0]}
-                onChange = {(e) => {
-                    setSelectedKeys(e.target.value?[e.target.value]:[])
-                }}
-                onPressEnter={() => { 
-                    confirm();
-                }}
-                onBlur={() => { 
-                    confirm();
-                }}
-                ></Input>
+                    <>
+                        <Input
+                            autoFocus
+                            placeholder="Type text here"
+                            value={selectedKeys[0]}
+                            onChange={(e) => {
+                                setSelectedKeys(e.target.value ? [e.target.value] : [])
+                            }}
+                            onPressEnter={() => {
+                                confirm();
+                            }}
+                            onBlur={() => {
+                                confirm();
+                            }}
+                        ></Input>
+                        <Button
+                            onClick={() => {
+                                confirm();
+                            }}
+                            type="primary"
+                        >
+                            Search
+                        </Button>
+                        <Button
+                            onClick={() => {
+                                clearFilters();
+                            }}
+                            type="danger"
+                        >
+                            Reset
+                        </Button>
+                    </>
                 );
             },
             filterIcon: () => {
                 return <SearchOutlined />;
             },
-            onFilter:(value, record) => {
+            onFilter: (value, record) => {
                 return record.name.toLowerCase().includes(value.toLowerCase())
             },
         },
