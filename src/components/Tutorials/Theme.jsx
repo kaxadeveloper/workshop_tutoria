@@ -1,10 +1,13 @@
-import { Button, Input } from "antd";
+import { Button, Input, Progress, Space } from "antd";
 
 export default function ThemeTab() {
     return (
         <div>
-            <Button type="primary">Button</Button>
-            <Input placeholder="Type here..."></Input>
+            <Space>
+                <Button type="primary">Button</Button>
+                <Input placeholder="Type here..."></Input>
+                <Progress percent={50} type="circle" />
+            </Space>
         </div>
     )
 }
