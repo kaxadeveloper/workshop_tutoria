@@ -1,4 +1,4 @@
-import { Button, Input, Progress, Space } from "antd";
+import { Button, DatePicker, Input, Progress, Space, Spin } from "antd";
 
 export default function ThemeTab() {
     return (
@@ -8,6 +8,7 @@ export default function ThemeTab() {
                 <Input placeholder="Type here..."></Input>
                 <Progress percent={50} type="circle" />
                 <Spin spinning />
+                <DatePicker />
                 
             </Space>
         </div>
