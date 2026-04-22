@@ -7,6 +7,8 @@ export default function ThemeTab() {
                 <Button type="primary">Button</Button>
                 <Input placeholder="Type here..."></Input>
                 <Progress percent={50} type="circle" />
+                <Spin spinning />
+                
             </Space>
         </div>
     )
