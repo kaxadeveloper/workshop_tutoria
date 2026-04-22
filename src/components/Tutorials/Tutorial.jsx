@@ -13,6 +13,7 @@ import TableTab1 from "./Table1";
 import IconsTab from "./Icons";
 import TableCrudTab from "./TableCrud";
 import TableSearchTab from "./TableSearch";
+import ThemeTab from "./Theme";
 
 export default function Tutorial() {
     const [open, setOpen] = useState(false); // modal is closed initially
@@ -82,6 +83,11 @@ export default function Tutorial() {
             key: "13",
             label: "TableSearch",
             children: <TableSearchTab />
+        },
+        {
+            key: "14",
+            label: "Theme",
+            children: <ThemeTab />
         },
     ];
 
