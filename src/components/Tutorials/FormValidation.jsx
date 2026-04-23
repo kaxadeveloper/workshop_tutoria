@@ -27,7 +27,9 @@ export default function FormValidationTab() {
                     </Select>
                 </Form.Item>
 
-                
+                <Form.Item name="dob" label="Date of Birth">
+                    <DatePicker picker="date" placeholder="Choose date of birth"/>
+                </Form.Item>
             </Form>
         </div>
     );
