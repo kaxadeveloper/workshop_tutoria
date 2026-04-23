@@ -38,8 +38,8 @@ export default function FormValidationTab() {
                         },
                         { min: 6 },
                         {
-                            validator:(_,value) =>
-                            value && value.includes('A') ? Promise.resolve():Promise.reject('Password does not match criteria.'),
+                            validator: (_, value) =>
+                                value && value.includes('A') ? Promise.resolve() : Promise.reject('Password does not match criteria.'),
                         }
                     ]}
                     hasFeedback
@@ -67,14 +67,20 @@ export default function FormValidationTab() {
                     <Input.Password placeholder="Confirm your password" />
                 </Form.Item>
 
-                <Form.Item name="gender" label="Gender" requiredMark = "optional">
+                <Form.Item name="gender" label="Gender" requiredMark="optional">
                     <Select placeholder="Select your gender">
                         <Select.Option value="male">Male</Select.Option>
                         <Select.Option value="female">Female</Select.Option>
                     </Select>
                 </Form.Item>
 
-                <Form.Item name="dob" label="Date of Birth">
+                <Form.Item name="dob" label="Date of Birth" rules={[
+                    {
+                        required: true,
+                        message: "Please provide your date of birth",
+                    },
+                ]}
+                >
                     <DatePicker style={{ width: "100%" }} picker="date" placeholder="Choose date of birth" />
                 </Form.Item>
 
