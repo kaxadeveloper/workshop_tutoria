@@ -30,6 +30,10 @@ export default function FormValidationTab() {
                 <Form.Item name="dob" label="Date of Birth">
                     <DatePicker picker="date" placeholder="Choose date of birth"/>
                 </Form.Item>
+
+                <Form.Item name="website" label="Website">
+                    <Input placeholder="Add your website url" />
+                </Form.Item>
             </Form>
         </div>
     );
