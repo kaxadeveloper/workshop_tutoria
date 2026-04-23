@@ -34,6 +34,10 @@ export default function FormValidationTab() {
                 <Form.Item name="website" label="Website">
                     <Input placeholder="Add your website url" />
                 </Form.Item>
+
+                <Form.Item name="agreement">
+                    <Checkbox> Agree to our <a href="#">Terms and Conditions</a></Checkbox>
+                </Form.Item>
             </Form>
         </div>
     );
