@@ -40,7 +40,7 @@ export default function FormValidationTab() {
                         {
                             validator: (_, value) =>
                                 value && value.includes('A') ? Promise.resolve() : Promise.reject('Password does not match criteria.'),
-                        }
+                        },
                     ]}
                     hasFeedback
                 >
@@ -93,15 +93,17 @@ export default function FormValidationTab() {
                     <Input placeholder="Add your website url" />
                 </Form.Item>
 
-                <Form.Item 
-                name="agreement" 
-                wrapperCol={{ span: 24 }} 
-                rules={[
-                    {
-                        required: true,
-                        message: "To proceed, you need to agree with our terms and conditions",
-                    },
-                ]}
+                <Form.Item
+                    name="agreement"
+                    wrapperCol={{ span: 24 }}
+                    valuePropName="checked"
+                    rules={[
+                        {
+                            validator: (_, value) =>
+                                value
+                                    ? Promise.resolve() : Promise.reject('To proceed, you need to agree with our terms and conditions'),
+                        },
+                    ]}
                 >
                     <Checkbox> {" "} Agree to our <a href="#">Terms and Conditions</a></Checkbox>
                 </Form.Item>
