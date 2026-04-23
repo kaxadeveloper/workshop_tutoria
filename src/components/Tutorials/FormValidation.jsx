@@ -3,7 +3,17 @@ import { Form, Button, Checkbox, DatePicker, Input, Select } from "antd";
 export default function FormValidationTab() {
     return (
         <div>
-            <Form autoComplete="off" labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
+            <Form
+                autoComplete="off"
+                labelCol={{ span: 10 }}
+                wrapperCol={{ span: 14 }}
+                onFinish={(values) => {
+                    console.log({ values });
+                }}
+                onFinishFailed={(error) => {
+                    console.log({ error });
+                }}
+            >
                 <Form.Item name="fullName" label="Full Name" rules={[
                     {
                         required: true,
