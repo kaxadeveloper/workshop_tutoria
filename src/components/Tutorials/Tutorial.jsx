@@ -14,6 +14,7 @@ import IconsTab from "./Icons";
 import TableCrudTab from "./TableCrud";
 import TableSearchTab from "./TableSearch";
 import ThemeTab from "./Theme";
+import FormValidationTab from "./FormValidation";
 
 export default function Tutorial() {
     const [open, setOpen] = useState(false); // modal is closed initially
@@ -88,6 +89,11 @@ export default function Tutorial() {
             key: "14",
             label: "Theme",
             children: <ThemeTab />
+        },
+        {
+            key: "15",
+            label: "FormValidation",
+            children: <FormValidationTab />
         },
     ];
 
