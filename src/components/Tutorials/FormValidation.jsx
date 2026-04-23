@@ -19,6 +19,15 @@ export default function FormValidationTab() {
                 <Form.Item name="confirmPassword" label="Confirm Password">
                     <Input.Password placeholder="Confirm your password" />
                 </Form.Item>
+
+                <Form.Item name="gender" label="Gender">
+                    <Select placeholder="Select your gender">
+                        <Select.Option value="male">Male</Select.Option>
+                        <Select.Option value="female">Female</Select.Option>
+                    </Select>
+                </Form.Item>
+
+                
             </Form>
         </div>
     );
