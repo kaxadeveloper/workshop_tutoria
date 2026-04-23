@@ -3,12 +3,29 @@ import { Form, Button, Checkbox, DatePicker, Input, Select } from "antd";
 export default function FormValidationTab() {
     return (
         <div>
-            <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
-                <Form.Item name="fullName" label="Full Name">
+            <Form autoComplete="off" labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
+                <Form.Item name="fullName" label="Full Name" rules={[
+                    {
+                        required: true,
+                        message: "Please enter your name",
+                    },
+                    { whitespace: true },
+                    { min: 3 },
+                ]}
+                    hasFeedback
+                >
                     <Input placeholder="Type your name" />
                 </Form.Item>
 
-                <Form.Item name="email" label="Email">
+                <Form.Item name="email" label="Email" rules={[
+                    {
+                        required: true,
+                        message: "Please enter your email",
+                    },
+                    { type: 'email', message:"Please enter a valid email" },
+                ]}
+                    hasFeedback
+                >
                     <Input placeholder="Type your email" />
                 </Form.Item>
 
@@ -28,19 +45,19 @@ export default function FormValidationTab() {
                 </Form.Item>
 
                 <Form.Item name="dob" label="Date of Birth">
-                    <DatePicker picker="date" placeholder="Choose date of birth" />
+                    <DatePicker style={{ width: "100%" }} picker="date" placeholder="Choose date of birth" />
                 </Form.Item>
 
                 <Form.Item name="website" label="Website">
                     <Input placeholder="Add your website url" />
                 </Form.Item>
 
-                <Form.Item name="agreement">
+                <Form.Item name="agreement" wrapperCol={{ span: 24 }}>
                     <Checkbox> Agree to our <a href="#">Terms and Conditions</a></Checkbox>
                 </Form.Item>
 
-                <Form.Item>
-                    <Button type="primary" htmlType="submit">Register</Button>
+                <Form.Item wrapperCol={{ span: 24 }}>
+                    <Button block type="primary" htmlType="submit">Register</Button>
                 </Form.Item>
             </Form>
         </div>
