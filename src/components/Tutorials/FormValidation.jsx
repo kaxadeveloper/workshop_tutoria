@@ -22,14 +22,23 @@ export default function FormValidationTab() {
                         required: true,
                         message: "Please enter your email",
                     },
-                    { type: 'email', message:"Please enter a valid email" },
+                    { type: 'email', message: "Please enter a valid email" },
                 ]}
                     hasFeedback
                 >
                     <Input placeholder="Type your email" />
                 </Form.Item>
 
-                <Form.Item name="password" label="Password">
+                <Form.Item 
+                name="password" 
+                label="Password" 
+                rules={[
+                    {
+                        required: true,
+                    },
+                ]}
+                    hasFeedback
+                >
                     <Input.Password placeholder="Type your password" />
                 </Form.Item>
 
