@@ -29,20 +29,41 @@ export default function FormValidationTab() {
                     <Input placeholder="Type your email" />
                 </Form.Item>
 
-                <Form.Item 
-                name="password" 
-                label="Password" 
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
+                <Form.Item
+                    name="password"
+                    label="Password"
+                    rules={[
+                        {
+                            required: true,
+                        },
+                        { min: 6 },
+                        {
+                            validator:(_,value) =>
+                            value && value.includes('A') ? Promise.resolve():Promise.reject('Password does not match criteria.'),
+                        }
+                    ]}
                     hasFeedback
                 >
                     <Input.Password placeholder="Type your password" />
                 </Form.Item>
 
-                <Form.Item name="confirmPassword" label="Confirm Password">
+                <Form.Item name="confirmPassword" label="Confirm Password"
+                    dependencies={['password']}
+                    rules={[
+                        {
+                            required: true,
+                        },
+                        ({ getFieldValue }) => ({
+                            validator(_, value) {
+                                if (!value || getFieldValue('password') === value) {
+                                    return Promise.resolve()
+                                }
+                                return Promise.reject('The two passwords that you entered does not match.');
+                            },
+                        }),
+                    ]}
+                    hasFeedback
+                >
                     <Input.Password placeholder="Confirm your password" />
                 </Form.Item>
 
