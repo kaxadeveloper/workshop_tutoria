@@ -14,26 +14,32 @@ export default function FormValidationTab() {
                     console.log({ error });
                 }}
             >
-                <Form.Item name="fullName" label="Full Name" rules={[
-                    {
-                        required: true,
-                        message: "Please enter your name",
-                    },
-                    { whitespace: true },
-                    { min: 3 },
-                ]}
+                <Form.Item
+                    name="fullName"
+                    label="Full Name"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please enter your name",
+                        },
+                        { whitespace: true, message: "Name cannot be empty" },
+                        { min: 3, message: "Name must be at least 3 characters" },
+                    ]}
                     hasFeedback
                 >
                     <Input placeholder="Type your name" />
                 </Form.Item>
 
-                <Form.Item name="email" label="Email" rules={[
-                    {
-                        required: true,
-                        message: "Please enter your email",
-                    },
-                    { type: 'email', message: "Please enter a valid email" },
-                ]}
+                <Form.Item
+                    name="email"
+                    label="Email"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please enter your email",
+                        },
+                        { type: "email", message: "Please enter a valid email" },
+                    ]}
                     hasFeedback
                 >
                     <Input placeholder="Type your email" />
@@ -45,11 +51,16 @@ export default function FormValidationTab() {
                     rules={[
                         {
                             required: true,
+                            message: "Please enter your password",
                         },
-                        { min: 6 },
+                        { min: 6, message: "Password must be at least 6 characters" },
                         {
                             validator: (_, value) =>
-                                value && value.includes('A') ? Promise.resolve() : Promise.reject('Password does not match criteria.'),
+                                value && value.includes("A")
+                                    ? Promise.resolve()
+                                    : Promise.reject(
+                                          "Password must include at least one uppercase 'A'"
+                                      ),
                         },
                     ]}
                     hasFeedback
@@ -57,18 +68,23 @@ export default function FormValidationTab() {
                     <Input.Password placeholder="Type your password" />
                 </Form.Item>
 
-                <Form.Item name="confirmPassword" label="Confirm Password"
-                    dependencies={['password']}
+                <Form.Item
+                    name="confirmPassword"
+                    label="Confirm Password"
+                    dependencies={["password"]}
                     rules={[
                         {
                             required: true,
+                            message: "Please confirm your password",
                         },
                         ({ getFieldValue }) => ({
                             validator(_, value) {
-                                if (!value || getFieldValue('password') === value) {
-                                    return Promise.resolve()
+                                if (!value || getFieldValue("password") === value) {
+                                    return Promise.resolve();
                                 }
-                                return Promise.reject('The two passwords that you entered does not match.');
+                                return Promise.reject(
+                                    "The two passwords do not match"
+                                );
                             },
                         }),
                     ]}
@@ -77,28 +93,40 @@ export default function FormValidationTab() {
                     <Input.Password placeholder="Confirm your password" />
                 </Form.Item>
 
-                <Form.Item name="gender" label="Gender" requiredMark="optional">
-                    <Select placeholder="Select your gender">
+                <Form.Item name="gender" label="Gender">
+                    <Select placeholder="Select your gender" allowClear>
                         <Select.Option value="male">Male</Select.Option>
                         <Select.Option value="female">Female</Select.Option>
                     </Select>
                 </Form.Item>
 
-                <Form.Item name="dob" label="Date of Birth" rules={[
-                    {
-                        required: true,
-                        message: "Please provide your date of birth",
-                    },
-                ]}
+                <Form.Item
+                    name="dob"
+                    label="Date of Birth"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please provide your date of birth",
+                        },
+                    ]}
                     hasFeedback
                 >
-                    <DatePicker style={{ width: "100%" }} picker="date" placeholder="Choose date of birth" />
+                    <DatePicker
+                        style={{ width: "100%" }}
+                        placeholder="Choose date of birth"
+                    />
                 </Form.Item>
 
-                <Form.Item name="website" label="Website" rules={[
-                    { type: 'url', message: "Please enter a valid url" },
+                <Form.Item
+                    name="website"
+                    label="Website"
+                    rules={[
+                        {
+                            type: "url",
+                            message: "Please enter a valid URL",
+                        },
+                    ]}
                     hasFeedback
-                ]}
                 >
                     <Input placeholder="Add your website url" />
                 </Form.Item>
@@ -111,15 +139,22 @@ export default function FormValidationTab() {
                         {
                             validator: (_, value) =>
                                 value
-                                    ? Promise.resolve() : Promise.reject('To proceed, you need to agree with our terms and conditions'),
+                                    ? Promise.resolve()
+                                    : Promise.reject(
+                                          "You must agree to the terms and conditions"
+                                      ),
                         },
                     ]}
                 >
-                    <Checkbox> {" "} Agree to our <a href="#">Terms and Conditions</a></Checkbox>
+                    <Checkbox>
+                        Agree to our <a href="#">Terms and Conditions</a>
+                    </Checkbox>
                 </Form.Item>
 
                 <Form.Item wrapperCol={{ span: 24 }}>
-                    <Button block type="primary" htmlType="submit">Register</Button>
+                    <Button block type="primary" htmlType="submit">
+                        Register
+                    </Button>
                 </Form.Item>
             </Form>
         </div>
