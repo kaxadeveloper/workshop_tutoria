@@ -80,16 +80,21 @@ export default function FormValidationTab() {
                         message: "Please provide your date of birth",
                     },
                 ]}
+                hasFeedback
                 >
                     <DatePicker style={{ width: "100%" }} picker="date" placeholder="Choose date of birth" />
                 </Form.Item>
 
-                <Form.Item name="website" label="Website">
+                <Form.Item name="website" label="Website" rules={[
+                    { type: 'url', message: "Please enter a valid url" },
+                    hasFeedback
+                ]}
+                >
                     <Input placeholder="Add your website url" />
                 </Form.Item>
 
                 <Form.Item name="agreement" wrapperCol={{ span: 24 }}>
-                    <Checkbox> Agree to our <a href="#">Terms and Conditions</a></Checkbox>
+                    <Checkbox> {" "} Agree to our <a href="#">Terms and Conditions</a></Checkbox>
                 </Form.Item>
 
                 <Form.Item wrapperCol={{ span: 24 }}>
