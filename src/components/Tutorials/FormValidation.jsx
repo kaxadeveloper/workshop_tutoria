@@ -13,7 +13,11 @@ export default function FormValidationTab() {
                 </Form.Item>
 
                 <Form.Item name="password" label="Password">
-                    <Input placeholder="Type your password" />
+                    <Input.Password placeholder="Type your password" />
+                </Form.Item>
+
+                <Form.Item name="confirmPassword" label="Confirm Password">
+                    <Input.Password placeholder="Confirm your password" />
                 </Form.Item>
             </Form>
         </div>
