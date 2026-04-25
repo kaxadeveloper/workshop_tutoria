@@ -1,8 +1,12 @@
 import { Table } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function TablePaginationTab() {
     const [dataSource, setDataSource] = useState([]);
+
+    useEffect(() => {
+        fetchRecords()
+    }, [])
 
     const columns = [
         {
@@ -17,7 +21,18 @@ export default function TablePaginationTab() {
             title: 'Trips',
             dataIndex: 'trips'
         }
-    ]
+    ];
+
+    const fetchRecords = () => {
+        fetch("https://api.instantwebtools.net/v1/passenger?page=0&size=10").then((res) => {
+            res.json().then((response) => {
+                
+                console.log(response);
+            });
+        }
+        );
+    };
+
     return (
         <div
             style={{
