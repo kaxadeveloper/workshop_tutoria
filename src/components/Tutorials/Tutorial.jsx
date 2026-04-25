@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Tabs, Modal, Button } from "antd";
+import { createStaticStyles } from "antd-style";
+
 import MyButton from "./Button";
 import InputTab from "./Input";
 import SelectTab from "./Select";
@@ -16,8 +18,51 @@ import TableSearchTab from "./TableSearch";
 import ThemeTab from "./Theme";
 import FormValidationTab from "./FormValidation";
 
+// Curtain Menu Styles
+const classNames = createStaticStyles(({ css }) => ({
+    root: css`
+    overflow: hidden;
+    border-radius: 12px;
+  `,
+}));
+
+const tabStyles = {
+    root: {
+        minHeight: "500px",
+        borderRadius: 12,
+        overflow: "hidden",
+    },
+
+    header: {
+        background: "#001529",
+        width: "230px",
+        paddingTop: "15px",
+    },
+
+    item: {
+        color: "#fff",
+        fontWeight: "500",
+        padding: "14px 20px",
+        margin: "6px 10px",
+        borderRadius: "8px",
+        transition: "all .35s ease",
+    },
+
+    indicator: {
+        backgroundColor: "#1677ff",
+        width: "4px",
+    },
+
+    content: {
+        background: "#f5f5f5",
+        padding: "25px",
+        minHeight: "500px",
+        animation: "fadeSlide .4s ease",
+    },
+};
+
 export default function Tutorial() {
-    const [open, setOpen] = useState(false); // modal is closed initially
+    const [open, setOpen] = useState(false);
 
     const items = [
         {
@@ -48,72 +93,118 @@ export default function Tutorial() {
         {
             key: "6",
             label: "DatePicker",
-            children: <DatePickerTab />
+            children: <DatePickerTab />,
         },
         {
             key: "7",
             label: "Spinner",
-            children: <SpinTab />
+            children: <SpinTab />,
         },
         {
             key: "8",
-            label: "ProgressBar",
-            children: <ProgressTab />
+            label: "Progress",
+            children: <ProgressTab />,
         },
         {
             key: "9",
             label: "Pagination",
-            children: <PaginationTab />
+            children: <PaginationTab />,
         },
         {
             key: "10",
             label: "Table1",
-            children: <TableTab1 />
+            children: <TableTab1 />,
         },
         {
             key: "11",
             label: "Icons",
-            children: <IconsTab />
+            children: <IconsTab />,
         },
         {
             key: "12",
             label: "TableCrud",
-            children: <TableCrudTab />
+            children: <TableCrudTab />,
         },
         {
             key: "13",
-            label: "TableSearch",
-            children: <TableSearchTab />
+            label: "Search",
+            children: <TableSearchTab />,
         },
         {
             key: "14",
             label: "Theme",
-            children: <ThemeTab />
+            children: <ThemeTab />,
         },
         {
             key: "15",
-            label: "FormValidation",
-            children: <FormValidationTab />
+            label: "Validation",
+            children: <FormValidationTab />,
         },
     ];
 
     return (
-        <div style={{ height: "100vh", padding: "20px", display:"flex", alignItems: "center", justifyContent: "center"}}>
-            {/* Welcome Button */}
-            <Button type="primary" onClick={() => setOpen(true)}>
-                Welcome
+        <div
+            style={{
+                height: "100vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                background: "#eef2f7",
+            }}
+        >
+            <Button
+                size="large"
+                type="primary"
+                onClick={() => setOpen(true)}
+            >
+                Open Tutorial
             </Button>
 
-            {/* Modal with Tabs */}
             <Modal
-                title="Welcome"
+                title="Ant Design Tutorial"
                 open={open}
                 onCancel={() => setOpen(false)}
                 footer={null}
                 centered
+                width={1000}
             >
-                <Tabs items={items} />
+                <Tabs
+                    items={items}
+                    tabPosition="left"
+                    defaultActiveKey="1"
+                    classNames={classNames}
+                    styles={tabStyles}
+                />
             </Modal>
+
+            <style>
+                {`
+        @keyframes fadeSlide{
+          from{
+            opacity:0;
+            transform:translateX(25px);
+          }
+          to{
+            opacity:1;
+            transform:translateX(0);
+          }
+        }
+
+        .ant-tabs-tab:hover{
+          transform: translateX(8px); /* Curtain slide effect */
+          background:#1677ff33;
+        }
+
+        .ant-tabs-tab-active{
+          background:#1677ff !important;
+          border-radius:8px;
+        }
+
+        .ant-tabs-tab-active .ant-tabs-tab-btn{
+          color:white !important;
+        }
+        `}
+            </style>
         </div>
     );
 }
