@@ -1,5 +1,6 @@
 import { Table } from "antd";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function TablePaginationTab() {
     const [dataSource, setDataSource] = useState([]);
@@ -27,14 +28,11 @@ export default function TablePaginationTab() {
 
     const fetchRecords = (page) => {
         setLoading(true);
-        fetch(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=10`).then((res) => {
-            res.json().then((response) => {
-                setDataSource(response.data);
-                setTotalPages(response.totalPages);
-                setLoading(false);
-            });
-        }
-        );
+        axios.get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=10`).then((res) => {
+            setDataSource(res.data.data);
+            setTotalPages(res.data.totalPages);
+            setLoading(false);
+        });
     };
 
     return (
@@ -49,11 +47,11 @@ export default function TablePaginationTab() {
                 loading={loading}
                 columns={columns}
                 dataSource={dataSource}
-                pagination = {{
+                pagination={{
                     pageSize: 10,
                     total: totalPages,
-                    onChange:(page) => {
-                      fetchRecords(page)
+                    onChange: (page) => {
+                        fetchRecords(page);
                     }
                 }}
             >
