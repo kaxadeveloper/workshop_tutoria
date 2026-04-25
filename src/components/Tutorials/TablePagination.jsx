@@ -3,60 +3,81 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function TablePaginationTab() {
-    const [dataSource, setDataSource] = useState([]);
-    const [totalPages, setTotalPages] = useState(1);
-    const [loading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        fetchRecords(1);
-    }, [])
+  const [pagination, setPagination] = useState({
+    current: 1,
+    pageSize: 10,
+    total: 0,
+  });
 
-    const columns = [
-        {
-            title: 'ID',
-            dataIndex: '_id'
-        },
-        {
-            title: 'Name',
-            dataIndex: 'name'
-        },
-        {
-            title: 'Trips',
-            dataIndex: 'trips'
-        }
-    ];
+  useEffect(() => {
+    fetchRecords(1);
+  }, []);
 
-    const fetchRecords = (page) => {
-        setLoading(true);
-        axios.get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=10`).then((res) => {
-            setDataSource(res.data.data);
-            setTotalPages(res.data.totalPages);
-            setLoading(false);
-        });
-    };
+  const columns = [
+    {
+      title: "ID",
+      dataIndex: "id",
+    },
+    {
+      title: "First Name",
+      dataIndex: "firstName",
+    },
+    {
+      title: "Last Name",
+      dataIndex: "lastName",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+    },
+  ];
 
-    return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-            }}
-        >
-            <Table
-                loading={loading}
-                columns={columns}
-                dataSource={dataSource}
-                pagination={{
-                    pageSize: 10,
-                    total: totalPages,
-                    onChange: (page) => {
-                        fetchRecords(page);
-                    }
-                }}
-            >
+  const fetchRecords = async (page) => {
+    try {
+      setLoading(true);
 
-            </Table>
-        </div>
-    );
+      // skip used for pagination
+      const skip = (page - 1) * 10;
+
+      const res = await axios.get(
+        `https://dummyjson.com/users?limit=10&skip=${skip}`
+      );
+
+      setDataSource(res.data.users);
+
+      setPagination({
+        current: page,
+        pageSize: 10,
+        total: res.data.total,
+      });
+
+      setLoading(false);
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div
+      style={{
+        padding: 20,
+      }}
+    >
+      <Table
+        rowKey="id"
+        loading={loading}
+        columns={columns}
+        dataSource={dataSource}
+        pagination={pagination}
+        onChange={(pagination) => {
+          fetchRecords(pagination.current);
+        }}
+      />
+    </div>
+  );
 }

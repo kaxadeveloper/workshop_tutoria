@@ -17,11 +17,10 @@ export default function MyButton() {
         <div style={{ display: "flex", justifyContent: "center" }}>
             <Button
                 type="primary"
-                textAlign="center"
                 loading={loading}
                 icon={<PoweroffOutlined />}
                 className="my-button"
-                style={{ backgroundColor: 'green', color: 'white' }}
+                style={{ backgroundColor: 'green', color: 'white', textAlign:"center" }}
                 onClick={onButtonClick}
             >My First Button</Button>
         </div>
