@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 export default function TablePaginationTab() {
     const [dataSource, setDataSource] = useState([]);
+    const [totalPages, setTotalPages] = useState(1);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         fetchRecords()
@@ -26,8 +28,8 @@ export default function TablePaginationTab() {
     const fetchRecords = () => {
         fetch("https://api.instantwebtools.net/v1/passenger?page=0&size=10").then((res) => {
             res.json().then((response) => {
-                
-                console.log(response);
+                setDataSource(response.data)
+                setTotalPages(response.totalPages)
             });
         }
         );
