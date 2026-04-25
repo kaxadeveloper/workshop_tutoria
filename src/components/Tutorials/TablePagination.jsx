@@ -7,7 +7,7 @@ export default function TablePaginationTab() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetchRecords()
+        fetchRecords(1);
     }, [])
 
     const columns = [
@@ -25,11 +25,13 @@ export default function TablePaginationTab() {
         }
     ];
 
-    const fetchRecords = () => {
-        fetch("https://api.instantwebtools.net/v1/passenger?page=0&size=10").then((res) => {
+    const fetchRecords = (page) => {
+        setLoading(true);
+        fetch(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=10`).then((res) => {
             res.json().then((response) => {
-                setDataSource(response.data)
-                setTotalPages(response.totalPages)
+                setDataSource(response.data);
+                setTotalPages(response.totalPages);
+                setLoading(false);
             });
         }
         );
@@ -44,8 +46,16 @@ export default function TablePaginationTab() {
             }}
         >
             <Table
+                loading={loading}
                 columns={columns}
                 dataSource={dataSource}
+                pagination = {{
+                    pageSize: 10,
+                    total: totalPages,
+                    onChange:(page) => {
+                      fetchRecords(page)
+                    }
+                }}
             >
 
             </Table>
