@@ -10,12 +10,12 @@ export default function FileUploadTab() {
                 height: "100vh",
             }}
         >
-            <Upload
+            <Upload.Dragger
                 action={"http://localhost:5173/"}>
                 Drag files here OR
                 <br />
                 <Button>Click Upload</Button>
-            </Upload>
+            </Upload.Dragger>
         </div>
     );
 }
