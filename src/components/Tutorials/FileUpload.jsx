@@ -10,8 +10,11 @@ export default function FileUploadTab() {
                 height: "100vh",
             }}
         >
-            <Upload>
-                <Button>Upload</Button>
+            <Upload
+                action={"http://localhost:5173/"}>
+                Drag files here OR
+                <br />
+                <Button>Click Upload</Button>
             </Upload>
         </div>
     );
