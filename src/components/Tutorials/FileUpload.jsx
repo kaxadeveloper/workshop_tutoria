@@ -29,8 +29,12 @@ export default function FileUploadTab() {
                     },
                 ]}
                 iconRender={() => {
-                    return <Spin></Spin>
+                    return <Spin></Spin>;
                 }}
+                itemRender={(exisingComp, file) => {
+                    return <p>{file.name}</p>;
+                }}
+                
                 >
                 Drag files here OR
                 <br />
