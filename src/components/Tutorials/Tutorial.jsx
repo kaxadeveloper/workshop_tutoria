@@ -18,6 +18,7 @@ import TableSearchTab from "./TableSearch";
 import ThemeTab from "./Theme";
 import FormValidationTab from "./FormValidation";
 import TablePaginationTab from "./TablePagination";
+import FileUploadTab from "./FileUpload";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -145,6 +146,11 @@ export default function Tutorial() {
             key: "16",
             label: "TablePagination",
             children: <TablePaginationTab />,
+        },
+        {
+            key: "17",
+            label: "FileUpload",
+            children: <FileUploadTab />,
         },
     ];
 
