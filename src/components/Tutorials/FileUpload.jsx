@@ -11,7 +11,10 @@ export default function FileUploadTab() {
             }}
         >
             <Upload.Dragger
-                action={"http://localhost:5173/"}>
+                multiple 
+                listType="picture"
+                action={"http://localhost:5173/"}
+                >
                 Drag files here OR
                 <br />
                 <Button>Click Upload</Button>
