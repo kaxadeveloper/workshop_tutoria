@@ -14,6 +14,12 @@ export default function FileUploadTab() {
                 multiple 
                 listType="picture"
                 action={"http://localhost:5173/"}
+                showUploadList={{ showRemoveIcon: true }}
+                accept=".png,.jpeg,.doc"
+                beforeUpload={(file) => {
+                    
+                    return false
+                }}
                 >
                 Drag files here OR
                 <br />
