@@ -11,21 +11,22 @@ export default function FileUploadTab() {
             }}
         >
             <Upload.Dragger
-                multiple 
+                disabled
+                multiple
                 listType="picture"
                 action={"http://localhost:5173/"}
                 showUploadList={{ showRemoveIcon: true }}
                 accept=".png,.jpeg,.doc"
                 beforeUpload={(file) => {
-                    return false;
+                    return true;
                 }}
                 defaultFileList={[
                     {
                         uid: "abc",
                         name: "exising_file.png",
-                        status: "uploading", 
+                        status: "uploading",
                         percent: 50,
-                        url: "https://www.google.com/", 
+                        url: "https://www.google.com/",
                     },
                 ]}
                 iconRender={() => {
@@ -34,8 +35,15 @@ export default function FileUploadTab() {
                 itemRender={(exisingComp, file) => {
                     return <p>{file.name}</p>;
                 }}
-                
-                >
+                progress={{
+                    strokeWidth: 3,
+                    strokeColor: {
+                        "0%": "#f0f",
+                        "100%": "#ff0",
+                    },
+                    style: { top: 12 },
+                }}
+            >
                 Drag files here OR
                 <br />
                 <Button>Click Upload</Button>
