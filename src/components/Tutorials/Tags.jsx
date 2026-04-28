@@ -1,133 +1,171 @@
-import { Button, Space, Tag } from "antd";
-import { DeleteOutlined, Loading3QuartersOutlined } from "@ant-design/icons";
+import { useState } from "react";
+import { Button, Space, Tag, Input } from "antd";
+import {
+  DeleteOutlined,
+  Loading3QuartersOutlined,
+  PlusOutlined,
+  UndoOutlined,
+} from "@ant-design/icons";
 
 export default function TagsTab() {
-    return (
-        <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: "100vh",
-        }}>
-            <Space direction="vertical" size={2}>
-                <Tag>Tag</Tag>
-                <Tag>Tag2</Tag>
-                <Tag
-                    closable
-                    onClose={() => {
+  const initialTags = [
+    { id: 1, label: "Tag", color: "default" },
+    { id: 2, label: "Tag2", color: "default" },
+    { id: 3, label: "Warning", color: "warning" },
+    { id: 4, label: "Error", color: "error" },
+    { id: 5, label: "Custom Color", color: "#f0f" },
+  ];
 
-                    }}
-                >
-                    Tag3
-                </Tag>
-                <Tag
-                    closable
-                    color="warning"
-                    onClose={() => {
+  const [tags, setTags] = useState(initialTags);
+  const [deletedTags, setDeletedTags] = useState([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [selected, setSelected] = useState([]);
 
-                    }}
-                >
-                    Warning
-                </Tag>
-                <Tag
-                    closable
-                    color="error"
-                    onClose={() => {
+  // remove tag
+  const handleClose = (tagId) => {
+    const removed = tags.find((tag) => tag.id === tagId);
+    setDeletedTags((prev) => [...prev, removed]);
+    setTags((prev) => prev.filter((tag) => tag.id !== tagId));
+  };
 
-                    }}
-                    closeIcon={
-                        <Button danger type="text">
-                            X
-                        </Button>
-                    }
-                >
-                    Error
-                </Tag>
-                <Tag
-                    closable
-                    color="error"
-                    onClose={() => {
+  // restore last deleted tag
+  const undoDelete = () => {
+    if (!deletedTags.length) return;
 
-                    }}
-                    closeIcon={
-                        <DeleteOutlined />
-                    }
-                >
-                    Custom Remove Icon
-                </Tag>
-                <Tag
-                    closable
-                    color="#f0f"
-                    onClose={() => {
+    const restored = deletedTags[deletedTags.length - 1];
 
-                    }}
-                    closeIcon={
-                        <DeleteOutlined />
-                    }
-                >
-                    Custom Color Tag
-                </Tag>
-                <Tag
-                    closable
-                    style={{
-                        backgroundColor: "red", color: "yellow", borderColor: "blue",
-                        borderRadius: 10,
-                    }}
-                    onClose={() => {
+    setTags((prev) => [...prev, restored]);
+    setDeletedTags((prev) => prev.slice(0, -1));
+  };
 
-                    }}
-                    closeIcon={
-                        <DeleteOutlined style={{
-                            color: "white",
-                            fontSize: 15
-                        }} />
-                    }
-                >
-                    Custom Tag
-                </Tag>
-                <Tag
-                    closable
-                    style={{
-                        backgroundColor: "red", color: "yellow", borderColor: "blue",
-                        borderRadius: 10,
-                    }}
-                    onClose={() => {
+  // add new tag
+  const addTag = () => {
+    if (!input.trim()) return;
 
-                    }}
-                    closeIcon={
-                        <DeleteOutlined style={{
-                            color: "white",
-                            fontSize: 15
-                        }} />
-                    }
-                >
-                    <Button>Button Tag</Button>
-                </Tag>
-                <Tag
-                    closable={false}
-                    style={{
-                        backgroundColor: "red", color: "yellow", borderColor: "blue",
-                        borderRadius: 10,
-                    }}
-                    onClose={() => {
+    setTags((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        label: input,
+        color: "processing",
+      },
+    ]);
 
-                    }}
-                    closeIcon={
-                        <DeleteOutlined style={{
-                            color: "white",
-                            fontSize: 15
-                        }} />
-                    }
-                    icon={<Loading3QuartersOutlined spin />}
-                >
-                    Loading...
-                </Tag>
-                <Space direction="horizontal">
-                    {
-                        
-                    }
-                </Space>
-            </Space>
-        </div>
+    setInput("");
+  };
+
+  // selectable tags
+  const toggleSelected = (label) => {
+    setSelected((prev) =>
+      prev.includes(label)
+        ? prev.filter((item) => item !== label)
+        : [...prev, label]
     );
+  };
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
+    >
+      <Space direction="vertical" size={12}>
+        {tags.map((tag) => (
+          <Tag
+            key={tag.id}
+            closable
+            color={tag.color}
+            onClose={(e) => {
+              e.preventDefault(); // prevents instant removal animation
+              handleClose(tag.id);
+            }}
+            closeIcon={<DeleteOutlined />}
+          >
+            {tag.label}
+          </Tag>
+        ))}
+
+        <Tag
+          closable
+          style={{
+            backgroundColor: "red",
+            color: "yellow",
+            borderColor: "blue",
+            borderRadius: 10,
+          }}
+          onClose={(e) => {
+            e.preventDefault();
+            alert("Custom tag removed");
+          }}
+          closeIcon={
+            <DeleteOutlined
+              style={{
+                color: "white",
+                fontSize: 15,
+              }}
+            />
+          }
+        >
+          Custom Styled Tag
+        </Tag>
+
+        <Tag
+          icon={<Loading3QuartersOutlined spin={loading} />}
+          color="processing"
+        >
+          {loading ? "Loading..." : "Completed"}
+        </Tag>
+
+        <Button onClick={() => setLoading(!loading)}>
+          Toggle Loading
+        </Button>
+
+        <Space>
+          <Input
+            placeholder="Add new tag"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onPressEnter={addTag}
+          />
+
+          <Button
+            type="primary"
+            icon={<PlusOutlined />}
+            onClick={addTag}
+          >
+            Add
+          </Button>
+
+          <Button
+            icon={<UndoOutlined />}
+            onClick={undoDelete}
+          >
+            Undo Delete
+          </Button>
+        </Space>
+
+        <h3>Selectable Filter Tags</h3>
+
+        <Space wrap>
+          {["React", "JavaScript", "CSS", "Ant Design"].map((item) => (
+            <Tag
+              key={item}
+              color={selected.includes(item) ? "success" : "default"}
+              onClick={() => toggleSelected(item)}
+              style={{
+                cursor: "pointer",
+                padding: "6px 12px",
+              }}
+            >
+              {item}
+            </Tag>
+          ))}
+        </Space>
+      </Space>
+    </div>
+  );
 }
