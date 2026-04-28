@@ -1,5 +1,5 @@
 import { Button, Space, Tag } from "antd";
-import { DeleteOutlined } from "@ant-design/icons";
+import { DeleteOutlined, Loading3QuartersOutlined } from "@ant-design/icons";
 
 export default function TagsTab() {
     return (
@@ -102,6 +102,25 @@ export default function TagsTab() {
                     }
                 >
                     <Button>Button Tag</Button>
+                </Tag>
+                <Tag
+                    closable={false}
+                    style={{
+                        backgroundColor: "red", color: "yellow", borderColor: "blue",
+                        borderRadius: 10,
+                    }}
+                    onClose={() => {
+
+                    }}
+                    closeIcon={
+                        <DeleteOutlined style={{
+                            color: "white",
+                            fontSize: 15
+                        }} />
+                    }
+                    icon={<Loading3QuartersOutlined spin />}
+                >
+                    Loading...
                 </Tag>
             </Space>
         </div>
