@@ -28,6 +28,15 @@ export default function TagsTab() {
                 >
                     Warning
                 </Tag>
+                <Tag
+                    closable
+                    color="error"
+                    onClose={() => {
+
+                    }}
+                >
+                    Error
+                </Tag>
             </Space>
         </div>
     );
