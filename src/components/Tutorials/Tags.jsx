@@ -55,6 +55,18 @@ export default function TagsTab() {
                 >
                     Custom Remove Icon
                 </Tag>
+                <Tag
+                    closable
+                    color="#f0f"
+                    onClose={() => {
+
+                    }}
+                    closeIcon={
+                        <DeleteOutlined />
+                    }
+                >
+                    Custom Color Tag 
+                </Tag>
             </Space>
         </div>
     );
