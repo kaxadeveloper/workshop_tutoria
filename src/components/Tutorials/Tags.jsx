@@ -1,4 +1,4 @@
-import { Space, Tag } from "antd";
+import { Button, Space, Tag } from "antd";
 
 export default function TagsTab() {
     return (
@@ -34,6 +34,11 @@ export default function TagsTab() {
                     onClose={() => {
 
                     }}
+                    closeIcon={
+                        <Button danger type="text">
+                            X
+                        </Button>
+                    }
                 >
                     Error
                 </Tag>
