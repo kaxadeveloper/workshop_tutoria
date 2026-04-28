@@ -65,7 +65,25 @@ export default function TagsTab() {
                         <DeleteOutlined />
                     }
                 >
-                    Custom Color Tag 
+                    Custom Color Tag
+                </Tag>
+                <Tag
+                    closable
+                    style={{
+                        backgroundColor: "red", color: "yellow", borderColor: "blue",
+                        borderRadius: 10,
+                    }}
+                    onClose={() => {
+
+                    }}
+                    closeIcon={
+                        <DeleteOutlined style={{
+                            color: "white",
+                            fontSize: 15
+                        }} />
+                    }
+                >
+                    Custom Tag
                 </Tag>
             </Space>
         </div>
