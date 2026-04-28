@@ -11,6 +11,23 @@ export default function TagsTab() {
             <Space direction="vertical" size={2}>
                 <Tag>Tag</Tag>
                 <Tag>Tag2</Tag>
+                <Tag
+                    closable
+                    onClose={() => {
+
+                    }}
+                >
+                    Tag3
+                </Tag>
+                <Tag
+                    closable
+                    color="warning"
+                    onClose={() => {
+
+                    }}
+                >
+                    Warning
+                </Tag>
             </Space>
         </div>
     );
