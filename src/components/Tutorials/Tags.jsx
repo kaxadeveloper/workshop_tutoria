@@ -1,4 +1,5 @@
 import { Button, Space, Tag } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
 
 export default function TagsTab() {
     return (
@@ -41,6 +42,18 @@ export default function TagsTab() {
                     }
                 >
                     Error
+                </Tag>
+                <Tag
+                    closable
+                    color="error"
+                    onClose={() => {
+
+                    }}
+                    closeIcon={
+                        <DeleteOutlined />
+                    }
+                >
+                    Custom Remove Icon
                 </Tag>
             </Space>
         </div>
