@@ -19,6 +19,7 @@ import ThemeTab from "./Theme";
 import FormValidationTab from "./FormValidation";
 import TablePaginationTab from "./TablePagination";
 import FileUploadTab from "./FileUpload";
+import TagsTab from "./Tags";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -151,6 +152,11 @@ export default function Tutorial() {
             key: "17",
             label: "FileUpload",
             children: <FileUploadTab />,
+        },
+        {
+            key: "18",
+            label: "Tags",
+            children: <TagsTab />,
         },
     ];
 
