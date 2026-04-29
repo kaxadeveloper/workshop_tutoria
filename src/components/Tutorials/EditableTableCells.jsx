@@ -73,16 +73,23 @@ export default function EditableTableCellsTab() {
                         >
                             Edit
                         </Button>
-                        <Button type="link">Save</Button>
+                        <Button type="link" htmlType="submit">
+                            Save
+                        </Button>
                     </>
                 );
             }
         },
     ];
-
+    const onFinish = (values) => {
+        const updateDataSource = [...dataSource];
+        updateDataSource.splice(editingRow, 1, { ...values, key: editingRow });
+        setDataSource(updateDataSource);
+        setEditingRow(null);
+    };
     return (
         <div>
-            <Form form={form}>
+            <Form form={form} onFinish={onFinish}>
                 <Table
                     columns={columns}
                     dataSource={dataSource}
