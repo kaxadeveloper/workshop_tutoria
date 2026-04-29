@@ -1,8 +1,10 @@
-import { Button, Table } from "antd";
+import { Button, Form, Input, Table } from "antd";
 import { useEffect, useState } from "react";
 
 export default function EditableTableCellsTab() {
     const [dataSource, setDataSource] = useState([]);
+    const [editingRow, setEditingRow] = useState(null);
+
     useEffect(() => {
         const data = [];
         for (let index = 0; index < 7; index++) {
@@ -18,18 +20,52 @@ export default function EditableTableCellsTab() {
     const columns = [
         {
             title: 'Name',
-            dataIndex: 'name'
+            dataIndex: 'name',
+            render: (text, record) => {
+                if (editingRow === record.key) {
+                    return (
+                        <Form.Item
+                            name="name"
+                            rules={[{
+                                required: true,
+                                message: 'Please enter your name',
+                            }]}
+                        >
+                            <Input />
+                        </Form.Item>
+                    );
+                } else {
+                    return <p>{text}</p>
+                }
+            }
         },
         {
             title: 'Address',
-            dataIndex: 'address'
+            dataIndex: 'address',
+            render: (text, record) => {
+                if (editingRow === record.key) {
+                    return <Form.Item
+                        name="address"
+                        rules={[{
+                            required: true,
+                            message: 'Please enter your address'
+                        }]}
+                    >
+                        <Input />
+                    </Form.Item>
+                } else {
+                    return <p>{text}</p>
+                }
+            }
         },
         {
             title: 'Actions',
             render: (_, record) => {
                 return (
                     <>
-                        <Button type="link">Edit</Button>
+                        <Button type="link" onClick={() => {
+                            setEditingRow(record.key)
+                        }}>Edit</Button>
                         <Button type="link">Save</Button>
                     </>
                 );
@@ -39,12 +75,14 @@ export default function EditableTableCellsTab() {
 
     return (
         <div>
-            <Table
-                columns={columns}
-                dataSource={dataSource}
-            >
+            <Form>
+                <Table
+                    columns={columns}
+                    dataSource={dataSource}
+                >
 
-            </Table>
+                </Table>
+            </Form>
         </div>
     );
 }
