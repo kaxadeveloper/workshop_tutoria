@@ -1,8 +1,18 @@
 import { Button, Table } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function EditableTableCellsTab() {
     const [dataSource, setDataSource] = useState([]);
+    useEffect(() => {
+        const data = [];
+        for (let index = 0; index < 7; index++) {
+           data.push({
+            key:`${index}`,
+            name:`Name ${index}`,
+            address:`Address ${index}`
+           })
+        }
+    }, []);
 
     const columns = [
         {
