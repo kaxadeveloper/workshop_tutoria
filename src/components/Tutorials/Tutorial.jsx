@@ -20,6 +20,7 @@ import FormValidationTab from "./FormValidation";
 import TablePaginationTab from "./TablePagination";
 import FileUploadTab from "./FileUpload";
 import TagsTab from "./Tags";
+import EditableTableCellsTab from "./EditableTableCells";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -157,6 +158,11 @@ export default function Tutorial() {
             key: "18",
             label: "Tags",
             children: <TagsTab />,
+        },
+        {
+            key: "19",
+            label: "EditableTableCells",
+            children: <EditableTableCellsTab />
         },
     ];
 
