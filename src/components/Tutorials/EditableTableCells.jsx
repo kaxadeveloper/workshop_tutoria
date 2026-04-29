@@ -6,11 +6,11 @@ export default function EditableTableCellsTab() {
     useEffect(() => {
         const data = [];
         for (let index = 0; index < 7; index++) {
-           data.push({
-            key:`${index}`,
-            name:`Name ${index}`,
-            address:`Address ${index}`
-           })
+            data.push({
+                key: `${index}`,
+                name: `Name ${index}`,
+                address: `Address ${index}`
+            });
         }
         setDataSource(data);
     }, []);
@@ -27,11 +27,12 @@ export default function EditableTableCellsTab() {
         {
             title: 'Actions',
             render: (_, record) => {
-                return
-                <>
-                    <Button>Edit</Button>
-                    <Button>Save</Button>
-                </>
+                return (
+                    <>
+                        <Button type="link">Edit</Button>
+                        <Button type="link">Save</Button>
+                    </>
+                );
             }
         },
     ];
