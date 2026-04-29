@@ -12,6 +12,7 @@ export default function EditableTableCellsTab() {
             address:`Address ${index}`
            })
         }
+        setDataSource(data);
     }, []);
 
     const columns = [
