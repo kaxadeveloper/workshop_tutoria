@@ -8,6 +8,10 @@ export default function CustomizePaginationTab() {
                 <Pagination defaultCurrent={2} total={20} pageSize={5} />
                 <Pagination defaultCurrent={2} total={200} pageSize={5} />
                 <Pagination total={20} showSizeChanger />
+                <Pagination 
+                total={20} 
+                showSizeChanger 
+                pageSizeOptions={[1, 2, 10, 30]}/>
             </Space>
         </div>
     );
