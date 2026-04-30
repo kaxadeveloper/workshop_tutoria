@@ -12,6 +12,7 @@ export default function CustomizePaginationTab() {
                 total={20} 
                 showSizeChanger 
                 pageSizeOptions={[1, 2, 10, 30]}/>
+                <Pagination total={20} pageSize={5} showQuickJumper/>
             </Space>
         </div>
     );
