@@ -11,8 +11,26 @@ export default function CustomizePaginationTab() {
                 <Pagination 
                 total={20} 
                 showSizeChanger 
-                pageSizeOptions={[1, 2, 10, 30]}/>
+                pageSizeOptions={[1, 2, 10, 30]}
+                />
                 <Pagination total={20} pageSize={5} showQuickJumper/>
+                <Pagination simple total={20} pageSize={5} />
+                <Pagination 
+                total={20} 
+                pageSize={5} 
+                showQuickJumper
+                itemRender={(page, type) => {
+                    if(type === 'next') {
+                        return <a>NEXT</a>
+                    }
+                    else if(type === 'prev') {
+                        return <a>PRE</a>
+                    }
+                    if(type === 'page') {
+                        return <a>Page#{page}</a>;
+                    }
+                }} 
+                />
             </Space>
         </div>
     );
