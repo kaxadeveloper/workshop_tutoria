@@ -16,6 +16,7 @@ export default function TypographyTab() {
                 <Link href="https://www.google.com/" underline target="blank">
                     Code with CodingMaster
                 </Link>
+                <Paragraph strong>Code with CodingMaster</Paragraph>
             </Space>
         </div>
     );
