@@ -1,4 +1,4 @@
-import { SmileFilled } from "@ant-design/icons";
+import { CheckOutlined, SmileFilled } from "@ant-design/icons";
 import { Typography, Space } from "antd";
 import { useState } from "react";
 const { Title, Text, Paragraph, Link } = Typography;
@@ -37,6 +37,7 @@ export default function TypographyTab() {
                     triggerType: "icon|text",
                     tooltip: "Click to edit",
                     icon: <SmileFilled />,
+                    enterIcon: <CheckOutlined />,
                 }}
                 >
                     {text}
