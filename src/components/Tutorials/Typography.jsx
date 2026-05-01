@@ -43,8 +43,28 @@ export default function TypographyTab() {
                     {text}
                 </Paragraph>
                 <Paragraph copyable={{
+                    text: "Different Text Copied",
                     tooltips: ["Click to copy", "Done"],
-                }}>Code with CodingMaster</Paragraph>
+                }}
+                >
+                    Code with CodingMaster
+                </Paragraph>
+                <Paragraph
+                    style={{ width: "200px" }}
+                    ellipsis={{
+                        rows: 2,
+                        expandable: true,
+                        symbol: "show more",
+                    }}
+                >
+                    Code with CodingMaster,
+                    Code with CodingMaster,
+                    Code with CodingMaster,
+                    Code with CodingMaster,
+                    Code with CodingMaster,
+                    Code with CodingMaster,
+                    Code with CodingMaster,
+                </Paragraph>
             </Space>
         </div>
     );
