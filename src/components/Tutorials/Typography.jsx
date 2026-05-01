@@ -1,7 +1,9 @@
 import { Typography, Space } from "antd";
+import { useState } from "react";
 const { Title, Text, Paragraph, Link } = Typography;
 
 export default function TypographyTab() {
+    const [text, setText] = useState("Code with CodingMaster");
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
             <Space direction="vertical">
@@ -17,7 +19,14 @@ export default function TypographyTab() {
                     Code with CodingMaster
                 </Link>
                 <Paragraph strong>Code with CodingMaster</Paragraph>
-                <Paragraph editable>Code with CodingMaster</Paragraph>
+                <Paragraph editable={{
+                    onChange: (value) => {
+                        setText(value);
+                    },
+                }}
+                >
+                    {text}
+                </Paragraph>
             </Space>
         </div>
     );
