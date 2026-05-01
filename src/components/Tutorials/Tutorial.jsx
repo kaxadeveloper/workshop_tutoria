@@ -22,6 +22,7 @@ import FileUploadTab from "./FileUpload";
 import TagsTab from "./Tags";
 import EditableTableCellsTab from "./EditableTableCells";
 import CustomizePaginationTab from "./CustomizePagination";
+import TypographyTab from "./Typography";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -169,6 +170,11 @@ export default function Tutorial() {
             key: "20",
             label: "CustomizePagination",
             children: <CustomizePaginationTab />
+        },
+        {
+            key: "21",
+            label: "Typography",
+            children: <TypographyTab />
         },
     ];
 
