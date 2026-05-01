@@ -42,7 +42,9 @@ export default function TypographyTab() {
                 >
                     {text}
                 </Paragraph>
-                <Paragraph copyable>Code with CodingMaster</Paragraph>
+                <Paragraph copyable={{
+                    tooltips: ["Click to copy", "Done"],
+                }}>Code with CodingMaster</Paragraph>
             </Space>
         </div>
     );
