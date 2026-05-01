@@ -3,7 +3,7 @@ const { Title, Text, Paragraph, Link } = Typography;
 
 export default function TypographyTab() {
     return (
-        <div>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
             <Space direction="vertical">
                 <Title level={3}>Code with CodingMaster</Title>
                 <Title level={5}>Code with CodingMaster</Title>
@@ -13,6 +13,9 @@ export default function TypographyTab() {
                 <Text mark>Code with CodingMaster</Text>
                 <Text disabled>Code with CodingMaster</Text>
                 <Text type="success">Code with CodingMaster</Text>
+                <Link href="https://www.google.com/" underline target="blank">
+                    Code with CodingMaster
+                </Link>
             </Space>
         </div>
     );
