@@ -42,6 +42,7 @@ export default function TypographyTab() {
                 >
                     {text}
                 </Paragraph>
+                <Paragraph copyable>Code with CodingMaster</Paragraph>
             </Space>
         </div>
     );
