@@ -17,6 +17,7 @@ export default function TypographyTab() {
                     Code with CodingMaster
                 </Link>
                 <Paragraph strong>Code with CodingMaster</Paragraph>
+                <Paragraph editable>Code with CodingMaster</Paragraph>
             </Space>
         </div>
     );
