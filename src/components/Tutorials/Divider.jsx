@@ -14,11 +14,11 @@ export default function DividerTab() {
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, rem vitae adipisci laboriosam exercitationem, dignissimos aperiam quo nam consequuntur ea, hic quibusdam qui minus id!
             </p>
-            <Divider style={{ borderColor: "red" }}/>
+            <Divider style={{ borderColor: "red", margin: 0 }} />
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eaque nisi quae veritatis earum quis dignissimos, consectetur explicabo aliquid quasi ullam, recusandae a distinctio inventore!
             </p>
-            <Divider dashed style={{ borderColor: "blue" }}/>
+            <Divider dashed style={{ borderColor: "blue" }} />
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eaque nisi quae veritatis earum quis dignissimos, consectetur explicabo aliquid quasi ullam, recusandae a distinctio inventore!
             </p>
@@ -31,9 +31,15 @@ export default function DividerTab() {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eaque nisi quae veritatis earum quis dignissimos, consectetur explicabo aliquid quasi ullam, recusandae a distinctio inventore!
             </p>
             <Divider style={{ borderColor: "orange" }} orientation="right">Text</Divider>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eaque nisi quae veritatis earum quis dignissimos, consectetur explicabo aliquid quasi ullam, recusandae a distinctio inventore!
-            </p>
+            <div>
+                <span>Link</span>
+                <Divider style={{ borderColor: "orange" }} type="vertical"></Divider>
+                <span>Link</span>
+                <Divider style={{ borderColor: "orange" }} type="vertical"></Divider>
+                <span>Link</span>
+                <Divider style={{ borderColor: "orange" }} type="vertical"></Divider>
+                <span>Link</span>
+            </div>
         </div>
     );
 }
