@@ -18,6 +18,10 @@ export default function DividerTab() {
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eaque nisi quae veritatis earum quis dignissimos, consectetur explicabo aliquid quasi ullam, recusandae a distinctio inventore!
             </p>
+            <Divider dashed style={{ borderColor: "blue" }}/>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eaque nisi quae veritatis earum quis dignissimos, consectetur explicabo aliquid quasi ullam, recusandae a distinctio inventore!
+            </p>
         </div>
     );
 }
