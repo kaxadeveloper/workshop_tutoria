@@ -26,7 +26,7 @@ export default function DividerTab() {
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eaque nisi quae veritatis earum quis dignissimos, consectetur explicabo aliquid quasi ullam, recusandae a distinctio inventore!
             </p>
-            <Divider style={{ borderColor: "blue" }} orientation="left">Text</Divider>
+            <Divider style={{ borderColor: "orange" }} orientation="left">Text</Divider>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident eaque nisi quae veritatis earum quis dignissimos, consectetur explicabo aliquid quasi ullam, recusandae a distinctio inventore!
             </p>
