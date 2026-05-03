@@ -33,7 +33,7 @@ export default function MenuTab() {
                             key: "um",
                             children: [
                                 { label: "Edit Profile", key: "ep", icon: <EditOutlined /> },
-                                { label: "Switch Account", key: "sa" icon: <SwitcherOutlined />, },
+                                { label: "Switch Account", key: "sa", icon: <SwitcherOutlined />, },
                             ],
                         },
                         { label: "Signout", key: "signout", danger: true },
