@@ -12,6 +12,7 @@ export default function MenuTab() {
             <Space>
                 <Menu
                     mode="inline"
+                    defaultOpenKeys={["dashboard"]}
                     items={[
                         { label: "Home", key: "home" },
                         {
@@ -22,7 +23,14 @@ export default function MenuTab() {
                                 { label: "Expenses", key: "exp" },
                             ],
                         },
-                        { label: "User Management", key: "um" },
+                        {
+                            label: "User Management", 
+                            key: "um",
+                            children: [
+                                { label: "Edit Profile", key: "ep" },
+                                { label: "Switch Account", key: "sa" },
+                            ],
+                        },
                         { label: "Signout", key: "signout" },
                     ]}
                 ></Menu>
