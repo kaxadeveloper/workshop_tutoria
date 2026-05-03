@@ -1,4 +1,4 @@
-import { DashboardOutlined, DollarCircleOutlined, EditOutlined, HomeFilled, MoneyCollectOutlined } from "@ant-design/icons";
+import { DashboardOutlined, DollarCircleOutlined, EditOutlined, HomeFilled, MoneyCollectOutlined, SwitcherOutlined } from "@ant-design/icons";
 import { Menu, Space } from "antd";
 
 export default function MenuTab() {
@@ -33,7 +33,7 @@ export default function MenuTab() {
                             key: "um",
                             children: [
                                 { label: "Edit Profile", key: "ep", icon: <EditOutlined /> },
-                                { label: "Switch Account", key: "sa" },
+                                { label: "Switch Account", key: "sa" icon: <SwitcherOutlined />, },
                             ],
                         },
                         { label: "Signout", key: "signout", danger: true },
