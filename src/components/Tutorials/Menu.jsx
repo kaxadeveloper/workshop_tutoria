@@ -12,6 +12,7 @@ export default function MenuTab() {
             <Menu items={[
                 { label: "Home", key: "home" },
                 { label: "Dashboard", key: "dashboard" },
+                { label: "User Management", key: "um" },
             ]}></Menu>
         </div>
     );
