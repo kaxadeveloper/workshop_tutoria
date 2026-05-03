@@ -1,4 +1,4 @@
-import { HomeFilled } from "@ant-design/icons";
+import { DashboardOutlined, DollarCircleOutlined, EditOutlined, HomeFilled, MoneyCollectOutlined } from "@ant-design/icons";
 import { Menu, Space } from "antd";
 
 export default function MenuTab() {
@@ -19,16 +19,20 @@ export default function MenuTab() {
                         {
                             label: "Dashboard",
                             key: "dashboard",
+                            icon: <DashboardOutlined />,
                             children: [
-                                { label: "Revenue", key: "rev" },
-                                { label: "Expenses", key: "exp" },
+                                { label: "Revenue", key: "rev", icon: <DollarCircleOutlined /> },
+                                {
+                                    label: "Expenses", key: "exp",
+                                    icon: <MoneyCollectOutlined />,
+                                },
                             ],
                         },
                         {
-                            label: "User Management", 
+                            label: "User Management",
                             key: "um",
                             children: [
-                                { label: "Edit Profile", key: "ep" },
+                                { label: "Edit Profile", key: "ep", icon: <EditOutlined /> },
                                 { label: "Switch Account", key: "sa" },
                             ],
                         },
