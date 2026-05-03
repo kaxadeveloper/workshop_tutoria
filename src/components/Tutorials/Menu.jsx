@@ -1,3 +1,4 @@
+import { HomeFilled } from "@ant-design/icons";
 import { Menu, Space } from "antd";
 
 export default function MenuTab() {
@@ -14,7 +15,7 @@ export default function MenuTab() {
                     mode="inline"
                     defaultOpenKeys={["dashboard"]}
                     items={[
-                        { label: "Home", key: "home" },
+                        { label: "Home", key: "home", icon: <HomeFilled></HomeFilled> },
                         {
                             label: "Dashboard",
                             key: "dashboard",
@@ -31,7 +32,7 @@ export default function MenuTab() {
                                 { label: "Switch Account", key: "sa" },
                             ],
                         },
-                        { label: "Signout", key: "signout" },
+                        { label: "Signout", key: "signout", danger: true },
                     ]}
                 ></Menu>
             </Space>
