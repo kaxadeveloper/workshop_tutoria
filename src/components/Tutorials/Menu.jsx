@@ -31,6 +31,7 @@ export default function MenuTab() {
                         {
                             label: "User Management",
                             key: "um",
+                            type: "group",
                             children: [
                                 { label: "Edit Profile", key: "ep", icon: <EditOutlined /> },
                                 { label: "Switch Account", key: "sa", icon: <SwitcherOutlined />, },
