@@ -24,6 +24,7 @@ import EditableTableCellsTab from "./EditableTableCells";
 import CustomizePaginationTab from "./CustomizePagination";
 import TypographyTab from "./Typography";
 import DividerTab from "./Divider";
+import MenuTab from "./Menu";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -181,6 +182,11 @@ export default function Tutorial() {
             key: "22",
             label: "Divider",
             children: <DividerTab />
+        },
+        {
+            key: "23",
+            label: "Menu",
+            children: <MenuTab />
         },
     ];
 
