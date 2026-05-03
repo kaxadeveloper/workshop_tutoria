@@ -1,5 +1,5 @@
 import { DashboardOutlined, DollarCircleOutlined, EditOutlined, HomeFilled, MoneyCollectOutlined, SwitcherOutlined } from "@ant-design/icons";
-import { Menu, Space } from "antd";
+import { Input, Menu, Space } from "antd";
 
 export default function MenuTab() {
     return (
@@ -15,6 +15,13 @@ export default function MenuTab() {
                     mode="inline"
                     defaultOpenKeys={["dashboard"]}
                     items={[
+                        {
+                            label: (
+                                <Input.Search placeholder="Search here..."></Input.Search>
+                            ),
+                            key: "search",
+                        },
+
                         { label: "Home", key: "home", icon: <HomeFilled></HomeFilled> },
                         {
                             label: "Dashboard",
