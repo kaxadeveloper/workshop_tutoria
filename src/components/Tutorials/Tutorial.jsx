@@ -25,6 +25,7 @@ import CustomizePaginationTab from "./CustomizePagination";
 import TypographyTab from "./Typography";
 import DividerTab from "./Divider";
 import MenuTab from "./Menu";
+import TabsTab from "./tabs";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -187,6 +188,11 @@ export default function Tutorial() {
             key: "23",
             label: "Menu",
             children: <MenuTab />
+        },
+        {
+            key: "24",
+            label: "Tabs",
+            children: <TabsTab />
         },
     ];
 
