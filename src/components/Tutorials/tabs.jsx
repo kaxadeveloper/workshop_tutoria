@@ -9,7 +9,7 @@ export default function TabsTab() {
             minHeight: "100vh",
         }}
         >
-            <Tabs>
+            <Tabs defaultActiveKey="tab2">
                 <Tabs.TabPane tab="Tab 1" key="tab1">
                     <div>This is a content of tab1</div>
                 </Tabs.TabPane>
