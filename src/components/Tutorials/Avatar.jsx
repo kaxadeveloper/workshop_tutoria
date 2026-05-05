@@ -1,3 +1,4 @@
+import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Space } from "antd";
 
 export default function AvatarTab() {
@@ -19,6 +20,8 @@ export default function AvatarTab() {
                 <Avatar 
                 src = "/logo.png" 
                 />
+                <Avatar icon={<UserOutlined />} />
+                
             </Space>
         </div>
     );
