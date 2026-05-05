@@ -16,7 +16,9 @@ export default function AvatarTab() {
                 <Avatar shape="square" style={{ backgroundColor: "black" }}>
                     C
                 </Avatar>
-                
+                <Avatar 
+                src = "/logo.png" 
+                />
             </Space>
         </div>
     );
