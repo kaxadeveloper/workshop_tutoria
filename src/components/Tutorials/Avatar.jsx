@@ -17,11 +17,22 @@ export default function AvatarTab() {
                 <Avatar shape="square" style={{ backgroundColor: "black" }}>
                     C
                 </Avatar>
-                <Avatar 
-                src = "/logo.png" 
+                <Avatar
+                    src="/logo.png"
                 />
                 <Avatar icon={<UserOutlined />} />
-                
+                <Avatar.Group>
+                    <Avatar style={{ backgroundColor: "green", color: "white" }}>
+                        CodingMaster
+                    </Avatar>
+                    <Avatar shape="circle" style={{ backgroundColor: "black" }}>
+                        C
+                    </Avatar>
+                    <Avatar
+                        src="/logo.png"
+                    />
+                    <Avatar icon={<UserOutlined />} />
+                </Avatar.Group>
             </Space>
         </div>
     );
