@@ -33,6 +33,18 @@ export default function AvatarTab() {
                     />
                     <Avatar icon={<UserOutlined />} />
                 </Avatar.Group>
+                <Avatar.Group maxCount={2}>
+                    <Avatar style={{ backgroundColor: "green", color: "white" }}>
+                        CodingMaster
+                    </Avatar>
+                    <Avatar shape="circle" style={{ backgroundColor: "black" }}>
+                        C
+                    </Avatar>
+                    <Avatar
+                        src="/logo.png"
+                    />
+                    <Avatar icon={<UserOutlined />} />
+                </Avatar.Group>
             </Space>
         </div>
     );
