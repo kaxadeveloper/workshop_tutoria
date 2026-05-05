@@ -9,8 +9,8 @@ export default function AvatarTab() {
             minHeight: "100vh"
         }}
         >
-            <Space>
-                <Avatar />
+            <Space size={12} direction="vertical">
+                <Avatar style={{ backgroundColor: "green", color: "white" }}>CodingMaster</Avatar>
                 <Avatar shape="square" />
             </Space>
         </div>
