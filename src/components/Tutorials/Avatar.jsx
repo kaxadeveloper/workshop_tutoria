@@ -1,4 +1,4 @@
-import { Avatar } from "antd";
+import { Avatar, Space } from "antd";
 
 export default function AvatarTab() {
     return (
@@ -9,7 +9,10 @@ export default function AvatarTab() {
             minHeight: "100vh"
         }}
         >
-           <Avatar />
+            <Space>
+                <Avatar />
+                <Avatar shape="square" />
+            </Space>
         </div>
     );
 }
