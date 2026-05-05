@@ -10,8 +10,13 @@ export default function AvatarTab() {
         }}
         >
             <Space size={12} direction="vertical">
-                <Avatar style={{ backgroundColor: "green", color: "white" }}>CodingMaster</Avatar>
-                <Avatar shape="square" />
+                <Avatar style={{ backgroundColor: "green", color: "white" }}>
+                    CodingMaster
+                </Avatar>
+                <Avatar shape="square" style={{ backgroundColor: "black" }}>
+                    C
+                </Avatar>
+                
             </Space>
         </div>
     );
