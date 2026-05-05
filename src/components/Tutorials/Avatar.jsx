@@ -35,7 +35,7 @@ export default function AvatarTab() {
                 </Avatar.Group>
                 <Avatar.Group maxCount={2}>
                     <Avatar style={{ backgroundColor: "green", color: "white" }}>
-                        CodingMaster
+                        <span style={{ color: "red" }}> CodingMaster</span>
                     </Avatar>
                     <Avatar shape="circle" style={{ backgroundColor: "black" }}>
                         C
