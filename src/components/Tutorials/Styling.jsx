@@ -1,4 +1,4 @@
-import { Button, Image, Input, Space, Typography } from "antd";
+import { Button, DatePicker, Image, Input, Space, Typography } from "antd";
 import "./override.scss";
 
 function CustomInput1() {
@@ -28,7 +28,7 @@ export default function StylingTab() {
         }}
         >
             <Space size={12} align="center" direction="vertical">
-                <Image src="/logo.png"/>
+                <Image src="/logo.png" />
                 <Typography.Text>
                     CodingMaster
                 </Typography.Text>
@@ -44,6 +44,10 @@ export default function StylingTab() {
                 <CustomInput1 />
                 <CustomInput2 />
                 <Button>Button</Button>
+                <DatePicker
+                    style={{ width: "100%" }} className="datePicker" dropdownClassName="datePickerDropdown" />
+
+                    
             </Space>
         </div>
     );

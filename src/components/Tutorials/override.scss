@@ -24,6 +24,16 @@
         font-weight: bold;
         border-radius: 16px;
     }
+
+    .datePicker {
+        border-color: green;
+    }
+}
+
+.datePickerDropdown {
+    .ant-picker-cell-inner {
+        color: red;
+    }
 }
 
 .customInput1 {
