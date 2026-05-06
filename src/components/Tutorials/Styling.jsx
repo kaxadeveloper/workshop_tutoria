@@ -1,4 +1,4 @@
-import { Input, Space, Typography } from "antd";
+import { Button, Input, Space, Typography } from "antd";
 import "./override.scss";
 
 function CustomInput1() {
@@ -27,14 +27,8 @@ export default function StylingTab() {
             minHeight: "100vh"
         }}
         >
-            <Space size={12} direction="vertical">
-                <Typography.Text
-                // style={{
-                //     color: "red",
-                //     fontSize: 20,
-                //     fontWeight: "bold"
-                // }}
-                >
+            <Space size={12} direction="vertical" >
+                <Typography.Text>
                     CodingMaster
                 </Typography.Text>
                 <Typography.Text
@@ -48,6 +42,7 @@ export default function StylingTab() {
                 </Typography.Text>
                 <CustomInput1 />
                 <CustomInput2 />
+                <Button>Button</Button>
             </Space>
         </div>
     );
