@@ -1,9 +1,25 @@
-import { Input, Typography } from "antd";
+import { Input, Space, Typography } from "antd";
 import "./override.scss";
+
+function CustomInput1() {
+    return (
+        <div className="customInput1">
+            <Input placeholder="Type here" />
+        </div>
+    );
+}
+
+function CustomInput2() {
+    return (
+        <div className="customInput2">
+            <Input placeholder="Type here" />
+        </div>
+    );
+}
 
 export default function StylingTab() {
     return (
-        <div style={{
+        <div className="App" style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -11,25 +27,28 @@ export default function StylingTab() {
             minHeight: "100vh"
         }}
         >
-            <Typography.Text
-                style={{
-                    color: "red",
-                    fontSize: 20,
-                    fontWeight: "bold"
-                }}
-            >
-                CodingMaster
-            </Typography.Text>
-            <Typography.Text
-            style={{
-                color: "green",
-                fontSize: "20px",
-                fontWeight: "bold",
-            }}
-            >
-                Welcome Back!
-            </Typography.Text>
-            <Input />
+            <Space size={12} direction="vertical">
+                <Typography.Text
+                // style={{
+                //     color: "red",
+                //     fontSize: 20,
+                //     fontWeight: "bold"
+                // }}
+                >
+                    CodingMaster
+                </Typography.Text>
+                <Typography.Text
+                    style={{
+                        color: "green",
+                        fontSize: "20px",
+                        fontWeight: "bold",
+                    }}
+                >
+                    Welcome Back!
+                </Typography.Text>
+                <CustomInput1 />
+                <CustomInput2 />
+            </Space>
         </div>
     );
 }
