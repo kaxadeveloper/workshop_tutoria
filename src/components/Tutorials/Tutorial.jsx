@@ -27,6 +27,7 @@ import DividerTab from "./Divider";
 import MenuTab from "./Menu";
 import TabsTab from "./tabs";
 import AvatarTab from "./Avatar";
+import StylingTab from "./Styling";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -199,6 +200,11 @@ export default function Tutorial() {
             key: "25",
             label: "Avatar",
             children: <AvatarTab />
+        },
+        {
+            key: "26",
+            label: "Styling",
+            children: <StylingTab />
         },
     ];
 
