@@ -1,4 +1,4 @@
-import { Button, Input, Space, Typography } from "antd";
+import { Button, Image, Input, Space, Typography } from "antd";
 import "./override.scss";
 
 function CustomInput1() {
@@ -27,7 +27,8 @@ export default function StylingTab() {
             minHeight: "100vh"
         }}
         >
-            <Space size={12} direction="vertical" >
+            <Space size={12} align="center" direction="vertical">
+                <Image src="/logo.png"/>
                 <Typography.Text>
                     CodingMaster
                 </Typography.Text>
