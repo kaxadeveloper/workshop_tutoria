@@ -9,7 +9,14 @@ export default function StylingTab() {
             minHeight: "100vh"
         }}
         >
-        <Typography.Text>CodingMaster</Typography.Text>
+            <Typography.Text
+                style={{
+                    color: "red",
+                    fontSize: 20,
+                    fontWeight: "bold"
+                }}>
+                CodingMaster
+            </Typography.Text>
         </div>
     );
 }
