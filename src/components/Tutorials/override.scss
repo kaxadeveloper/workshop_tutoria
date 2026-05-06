@@ -1,8 +1,8 @@
 .App {
     .ant-typography {
-        color: red;
         font-size: 20px;
         font-weight: bold;
+        color: red;
     }
 
     .ant-input {
@@ -13,20 +13,36 @@
         color: blue;
     }
 
-    .ant-image {
+    .ant-image-img {
         width: 100px;
     }
 
     .ant-btn {
-        background-color: red;
-        width: 150px;
+        background-color: red !important;
+        border-color: red !important;
         color: white;
+        width: 150px;
         font-weight: bold;
         border-radius: 16px;
     }
 
-    .datePicker {
+    .datePicker .ant-picker {
         border-color: green;
+    }
+
+    .ant-table-thead {
+        .ant-table-cell {
+            background-color: rgb(212, 13, 156);
+            color: white;
+        }
+    }
+
+    .ant-table-tbody {
+        .ant-table-cell {
+            background-color: gray;
+            color: black;
+            border-color: purple;
+        }
     }
 }
 
