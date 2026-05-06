@@ -1,4 +1,4 @@
-import { Typography } from "antd";
+import { Input, Typography } from "antd";
 import "./override.scss";
 
 export default function StylingTab() {
@@ -29,6 +29,7 @@ export default function StylingTab() {
             >
                 Welcome Back!
             </Typography.Text>
+            <Input />
         </div>
     );
 }
