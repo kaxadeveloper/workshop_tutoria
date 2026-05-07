@@ -8,7 +8,11 @@ export default function CarouselTab() {
             justifyContent: "center",
             minHeight: "100vh"
         }}>
-            <div style={{ width: "300px", height: "300px", backgroundColor: "transparent" }}
+            <div
+                style={{
+                    width: "300px",
+                    height: "300px"
+                }}
             >
                 <Carousel
                     autoplay
@@ -17,18 +21,46 @@ export default function CarouselTab() {
                     pauseOnHover={true}
                     pauseOnDotsHover={true}
                     draggable
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                    }}
                 >
                     <div>
-                        <img style={{ height: "100%", width: "100%" }} src="/img1.jpg" />
+                        <img
+                            style={{
+                                height: "300px",
+                                width: "300px",
+                                objectFit: "cover",
+                            }}
+                            src="/img1.jpg" />
                     </div>
                     <div>
-                        <img style={{ height: "100%", width: "100%" }} src="/img2.jpg" />
+                        <img
+                            style={{
+                                height: "300px",
+                                width: "300px",
+                                objectFit: "cover",
+                            }}
+                            src="/img2.jpg" />
                     </div>
                     <div>
-                        <img style={{ height: "100%", width: "100%" }} src="/img3.jpg" />
+                        <img
+                            style={{
+                                height: "300px",
+                                width: "300px",
+                                objectFit: "cover",
+                            }}
+                            src="/img3.jpg" />
                     </div>
                     <div>
-                        <img style={{ height: "100%", width: "100%" }} src="/img4.jpg" />
+                        <img
+                            style={{
+                                height: "300px",
+                                width: "300px",
+                                objectFit: "cover",
+                            }}
+                            src="/img4.jpg" />
                     </div>
                 </Carousel>
             </div>
