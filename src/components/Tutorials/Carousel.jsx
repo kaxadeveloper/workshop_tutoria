@@ -1,7 +1,8 @@
 import { Button, Carousel } from "antd";
+import { useRef } from "react";
 
 export default function CarouselTab() {
-    
+    const ref = useRef()
     return (
         <div style={{
             display: "flex",
@@ -22,6 +23,7 @@ export default function CarouselTab() {
                     pauseOnHover={true}
                     pauseOnDotsHover={true}
                     draggable
+                    ref={ref}
                     style={{
                         width: "100%",
                         height: "100%",
@@ -66,11 +68,27 @@ export default function CarouselTab() {
                 </Carousel>
             </div>
             <div>
-                <Button onClick={() => {
-
-                }}>Prev</Button>
-                <Button>Reset</Button>
-                <Button>Next</Button>
+                <Button
+                    onClick={() => {
+                        ref.current.prev();
+                    }}
+                >
+                    Prev
+                </Button>
+                <Button
+                    onClick={() => {
+                        ref.current.goTo(0);
+                    }}
+                >
+                    Reset
+                </Button>
+                <Button
+                    onClick={() => {
+                        ref.current.next();
+                    }}
+                >
+                    Next
+                </Button>
             </div>
         </div>
     );
