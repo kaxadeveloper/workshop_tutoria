@@ -1,6 +1,7 @@
-import { Carousel } from "antd";
+import { Button, Carousel } from "antd";
 
 export default function CarouselTab() {
+    
     return (
         <div style={{
             display: "flex",
@@ -63,6 +64,13 @@ export default function CarouselTab() {
                             src="/img4.jpg" />
                     </div>
                 </Carousel>
+            </div>
+            <div>
+                <Button onClick={() => {
+
+                }}>Prev</Button>
+                <Button>Reset</Button>
+                <Button>Next</Button>
             </div>
         </div>
     );
