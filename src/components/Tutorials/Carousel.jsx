@@ -10,7 +10,14 @@ export default function CarouselTab() {
         }}>
             <div style={{ width: "300px", height: "300px", backgroundColor: "transparent" }}
             >
-                <Carousel>
+                <Carousel
+                    autoplay
+                    dots={true}
+                    dotPosition="bottom"
+                    pauseOnHover={true}
+                    pauseOnDotsHover={true}
+                    draggable
+                >
                     <div>
                         <img style={{ height: "100%", width: "100%" }} src="/img1.jpg" />
                     </div>
