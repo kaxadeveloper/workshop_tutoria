@@ -6,6 +6,8 @@ export default function CarouselTab() {
     return (
         <div style={{
             display: "flex",
+            flexDirection: "column",
+            rowGap: "10px",
             alignItems: "center",
             justifyContent: "center",
             minHeight: "100vh"
@@ -20,6 +22,7 @@ export default function CarouselTab() {
                     autoplay
                     dots={true}
                     dotPosition="bottom"
+                    affect="scrollx"
                     pauseOnHover={true}
                     pauseOnDotsHover={true}
                     draggable
