@@ -70,6 +70,27 @@ export default function StepsTab() {
                     },
                 ]}
             />
+            <Divider />
+            <Steps
+                style={{
+                    width: "100%",
+                    maxWidth: "500px",
+                }}
+                current={1}
+                items={[
+                    {
+                        title: "Finished"
+                    },
+                    {
+                        title: "In Progress",
+                        subTitle: "2 Min"
+                    },
+                    {
+                        title: "Waiting",
+                        description: 'It will initiate after step 2.'
+                    },
+                ]}
+            />
         </div>
     );
 }
