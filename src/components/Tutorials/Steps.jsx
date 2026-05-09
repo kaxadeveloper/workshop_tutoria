@@ -77,6 +77,8 @@ export default function StepsTab() {
                     maxWidth: "500px",
                 }}
                 current={1}
+                labelPlacement="vertical"
+                percent={75}
                 items={[
                     {
                         title: "Finished"
@@ -88,6 +90,26 @@ export default function StepsTab() {
                     {
                         title: "Waiting",
                         description: 'It will initiate after step 2.'
+                    },
+                ]}
+            />
+            <Divider />
+            <Steps
+                style={{
+                    width: "100%",
+                    maxWidth: "500px",
+                }}
+                current={1}
+                direction="vertical"
+                items={[
+                    {
+                        title: "Finished"
+                    },
+                    {
+                        title: "In Progress"
+                    },
+                    {
+                        title: "Waiting"
                     },
                 ]}
             />
