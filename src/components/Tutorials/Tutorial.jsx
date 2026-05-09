@@ -29,6 +29,7 @@ import TabsTab from "./tabs";
 import AvatarTab from "./Avatar";
 import StylingTab from "./Styling";
 import CarouselTab from "./Carousel";
+import StepsTab from "./Steps";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -211,6 +212,11 @@ export default function Tutorial() {
             key: "27",
             label: "Carousel",
             children: <CarouselTab />
+        },
+        {
+            key: "28",
+            label: "Steps",
+            children: <StepsTab />
         },
     ];
 
