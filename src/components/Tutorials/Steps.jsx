@@ -1,6 +1,8 @@
 import { Divider, Steps } from "antd";
+import { useState } from "react";
 
 export default function StepsTab() {
+    const [current, setCurrent] = useState(1);
     return (
         <div
             style={{
@@ -29,6 +31,9 @@ export default function StepsTab() {
             <Steps
                 current={1}
                 labelPlacement="vertical"
+                onChange={(c) => {
+
+                }}
                 items={[
                     {
                         title: "Finished"
