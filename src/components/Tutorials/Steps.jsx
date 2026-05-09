@@ -28,6 +28,7 @@ export default function StepsTab() {
             <Divider />
             <Steps
                 current={1}
+                labelPlacement="vertical"
                 items={[
                     {
                         title: "Finished"
