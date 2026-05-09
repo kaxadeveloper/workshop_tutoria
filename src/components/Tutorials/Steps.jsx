@@ -29,10 +29,10 @@ export default function StepsTab() {
             />
             <Divider />
             <Steps
-                current={1}
+                current={current}
                 labelPlacement="vertical"
                 onChange={(c) => {
-
+                    setCurrent(c);
                 }}
                 items={[
                     {
