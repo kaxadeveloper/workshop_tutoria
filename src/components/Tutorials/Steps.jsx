@@ -1,10 +1,11 @@
-import { Steps } from "antd";
+import { Divider, Steps } from "antd";
 
 export default function StepsTab() {
     return (
         <div
             style={{
                 display: 'flex',
+                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
                 minHeight: '100vh',
@@ -14,19 +15,31 @@ export default function StepsTab() {
                 current={1}
                 items={[
                     {
-                        title: "Finished",
-                        description: "This step is completed",
+                        title: "Finished"
                     },
                     {
-                        title: "In Progress",
-                        description: "Current working step",
+                        title: "In Progress"
                     },
                     {
-                        title: "Waiting",
-                        description: "Next upcoming step",
+                        title: "Waiting"
                     },
                 ]}
-            ></Steps>
+            />
+            <Divider />
+            <Steps
+                current={1}
+                items={[
+                    {
+                        title: "Finished"
+                    },
+                    {
+                        title: "In Progress"
+                    },
+                    {
+                        title: "Waiting"
+                    },
+                ]}
+            />
         </div>
     );
 }
