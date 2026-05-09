@@ -29,11 +29,35 @@ export default function StepsTab() {
             />
             <Divider />
             <Steps
+                style={{
+                    width: "100%",
+                    maxWidth: "500px",
+                }}
                 current={current}
                 labelPlacement="vertical"
                 onChange={(c) => {
                     setCurrent(c);
                 }}
+                items={[
+                    {
+                        title: "Finished"
+                    },
+                    {
+                        title: "In Progress"
+                    },
+                    {
+                        title: "Waiting"
+                    },
+                ]}
+            />
+            <Divider />
+            <Steps
+                style={{
+                    width: "100%",
+                    maxWidth: "500px",
+                }}
+                current={1}
+                progressDot={true}
                 items={[
                     {
                         title: "Finished"
