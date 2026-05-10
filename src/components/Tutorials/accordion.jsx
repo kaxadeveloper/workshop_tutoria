@@ -18,6 +18,7 @@ export default function AccordionTab() {
                 }}
                 expandIconPosition="start"
                 defaultActiveKey={["1", "2"]}
+                bordered={false}
             >
                 <Collapse.Panel key={"1"} header="This is a panel 1">
                     <Typography.Text>This is a content of Panel 1</Typography.Text>
