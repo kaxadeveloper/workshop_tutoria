@@ -12,13 +12,14 @@ export default function AccordionTab() {
             }}
         >
             <Collapse
-                accordion={false}
+                accordion={true}
                 expandIcon={({ isActive }) => {
                     return <CaretRightFilled rotate={isActive ? 90 : 0} />
                 }}
                 expandIconPosition="start"
                 defaultActiveKey={["1", "2"]}
                 bordered={false}
+                ghost={true}
             >
                 <Collapse.Panel key={"1"} header="This is a panel 1">
                     <Typography.Text>This is a content of Panel 1</Typography.Text>
