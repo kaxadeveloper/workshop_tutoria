@@ -1,4 +1,4 @@
-import { Collapse, Typography } from "antd";
+import { Button, Collapse, Typography } from "antd";
 
 export default function AccordionTab() {
     return (
@@ -20,8 +20,13 @@ export default function AccordionTab() {
                 >
                     <Typography.Text>This is a content of Panel 2</Typography.Text>
                 </Collapse.Panel>
-                <Collapse.Panel key={"3"} header="This is a panel 3">
+                <Collapse.Panel 
+                extra={<Button>Download</Button>} key={"3"} 
+                header="This is a panel 3">
                     <Typography.Text>This is a content of Panel 3</Typography.Text>
+                </Collapse.Panel>
+                <Collapse.Panel key={"4"} header="This is a panel 4">
+                    <Typography.Text>This is a content of Panel 4</Typography.Text>
                 </Collapse.Panel>
             </Collapse>
         </div>
