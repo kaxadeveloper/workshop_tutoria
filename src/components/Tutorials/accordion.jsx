@@ -11,11 +11,11 @@ export default function AccordionTab() {
                 minHeight: '100vh'
             }}
         >
-            <Collapse 
-            accordion={false} 
-            expandIcon={({ isActive }) => {
-                return <CaretRightFilled />
-            }}>
+            <Collapse
+                accordion={false}
+                expandIcon={({ isActive }) => {
+                    return <CaretRightFilled rotate={isActive ? 90 : 0} />
+                }}>
                 <Collapse.Panel key={"1"} header="This is a panel 1">
                     <Typography.Text>This is a content of Panel 1</Typography.Text>
                 </Collapse.Panel>
