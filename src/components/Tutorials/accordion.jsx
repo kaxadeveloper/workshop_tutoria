@@ -10,7 +10,7 @@ export default function AccordionTab() {
                 minHeight: '100vh'
             }}
         >
-            <Collapse>
+            <Collapse accordion={true}>
                 <Collapse.Panel key={"1"} header="This is a panel 1">
                     <Typography.Text>This is a content of Panel 1</Typography.Text>
                 </Collapse.Panel>
