@@ -15,7 +15,9 @@ export default function AccordionTab() {
                 accordion={false}
                 expandIcon={({ isActive }) => {
                     return <CaretRightFilled rotate={isActive ? 90 : 0} />
-                }}>
+                }}
+                expandIconPosition="end"
+            >
                 <Collapse.Panel key={"1"} header="This is a panel 1">
                     <Typography.Text>This is a content of Panel 1</Typography.Text>
                 </Collapse.Panel>
