@@ -30,6 +30,7 @@ import AvatarTab from "./Avatar";
 import StylingTab from "./Styling";
 import CarouselTab from "./Carousel";
 import StepsTab from "./Steps";
+import AccordionTab from "./accordion";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -217,6 +218,11 @@ export default function Tutorial() {
             key: "28",
             label: "Steps",
             children: <StepsTab />
+        },
+        {
+            key: "29",
+            label: "Accordion",
+            children: <AccordionTab />
         },
     ];
 
