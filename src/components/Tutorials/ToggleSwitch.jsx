@@ -16,6 +16,10 @@ export default function ToggleSwitchTab() {
                 <Switch
                     defaultChecked={true} checkedChildren="On" unCheckedChildren="Off"
                 />
+                <Switch
+                    defaultChecked={true} checkedChildren="Longer text for On" 
+                    unCheckedChildren="Longer text for Off"
+                />
             </Space>
         </div>
     );
