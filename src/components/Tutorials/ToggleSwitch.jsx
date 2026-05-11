@@ -24,6 +24,14 @@ export default function ToggleSwitchTab() {
                 <Switch
                     defaultChecked={true} checkedChildren={<CheckOutlined />}
                     unCheckedChildren={<CloseOutlined />}
+                    onChange={(checked) => {
+                        console.log("Switch is checked:", checked);
+                    }}
+                    disabled={true}
+                />
+                <Switch
+                    defaultChecked={true} 
+                    loading={true}
                 />
             </Space>
         </div>
