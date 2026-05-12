@@ -1,5 +1,5 @@
 import { PlusOutlined } from "@ant-design/icons";
-import { Button, Form, Input, Space } from "antd";
+import { Button, Form, Input, Select, Space } from "antd";
 
 export default function FormCrudTab() {
     const onFinish = (values) => {
@@ -39,8 +39,18 @@ export default function FormCrudTab() {
                                         </Form.Item>
                                         <Form.Item
                                             name={[field.name, "last"]}
-                                            >
+                                        >
                                             <Input placeholder="Last Name" />
+                                        </Form.Item>
+                                        <Form.Item
+                                            name={[field.name, "gender"]}
+                                        >
+                                            <Select placeholder="Gender">
+                                                {["Male", "Female"].map((gender) => {
+                                                    return (<Select.Option value={gender} key={gender}>{gender}</Select.Option>
+                                                    );
+                                                })}
+                                            </Select>
                                         </Form.Item>
                                     </Space>
                                 );
