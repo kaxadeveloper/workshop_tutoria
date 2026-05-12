@@ -26,16 +26,18 @@ export default function FormCrudTab() {
                         <>
                             {fields.map((field, index) => {
                                 return (
-                                    <Space direction="horizontal" size={12}>
+                                    <Space
+                                        key={field.key}
+                                        direction="horizontal"
+                                        size={12}
+                                    >
                                         <Form.Item
-                                            key={field.key}
                                             name={[field.name, "first"]}
                                             label={`${index + 1}-Student`}
                                         >
                                             <Input placeholder="First Name" />
                                         </Form.Item>
                                         <Form.Item
-                                            key={field.key}
                                             name={[field.name, "first"]}
                                             label={`${index + 1}-Student`}
                                         >
