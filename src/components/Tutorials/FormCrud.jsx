@@ -19,7 +19,7 @@ export default function FormCrudTab() {
                     <Input placeholder="Class Name" />
                 </Form.Item>
                 <Form.List name={"students"}>
-                    {(fields, Operation) => (
+                    {(fields, { add, remove }) => (
                         <>
                             {fields.map((field, index) => {
                                 return (<Form.Item name={[field.name, "first"]} label={`${index + 1}-Student`}>
@@ -32,6 +32,9 @@ export default function FormCrudTab() {
                                     icon={<PlusOutlined />}
                                     type="dashed"
                                     block
+                                    onClick={() => {
+                                        add();
+                                    }}
                                 >
                                     Add a Student
                                 </Button>
