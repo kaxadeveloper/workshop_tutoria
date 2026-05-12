@@ -1,4 +1,4 @@
-import { Form } from "antd";
+import { Form, Input } from "antd";
 
 export default function FormCrudTab() {
     return (
@@ -12,7 +12,7 @@ export default function FormCrudTab() {
         >
             <Form>
               <Form.Item name={"teacher"} label="Teacher Name">
-                  
+                  <Input placeholder="Teacher Name"/>
               </Form.Item>
             </Form>
         </div>
