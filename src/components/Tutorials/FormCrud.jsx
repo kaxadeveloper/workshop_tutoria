@@ -11,12 +11,23 @@ export default function FormCrudTab() {
             }}
         >
             <Form>
-              <Form.Item name={"teacher"} label="Teacher Name">
-                  <Input placeholder="Teacher Name"/>
-              </Form.Item>
-              <Form.Item name={"class"} label="Class Name">
-                  <Input placeholder="Class Name"/>
-              </Form.Item>
+                <Form.Item name={"teacher"} label="Teacher Name">
+                    <Input placeholder="Teacher Name" />
+                </Form.Item>
+                <Form.Item name={"class"} label="Class Name">
+                    <Input placeholder="Class Name" />
+                </Form.Item>
+                <Form.List name={"students"}>
+                    {(fields, Operation) => (
+                        <>
+                            {fields.map((field, index) => {
+                                return <Form.Item name={[field.name, "first"]} label={`${index + 1}-Student`}>
+                                    <Input placeholder="First Name" />
+                                </Form.Item>
+                            })}
+                        </>
+                    )}
+                </Form.List>
             </Form>
         </div>
     );
