@@ -1,4 +1,5 @@
-import { Form, Input } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+import { Button, Form, Input } from "antd";
 
 export default function FormCrudTab() {
     return (
@@ -21,10 +22,20 @@ export default function FormCrudTab() {
                     {(fields, Operation) => (
                         <>
                             {fields.map((field, index) => {
-                                return <Form.Item name={[field.name, "first"]} label={`${index + 1}-Student`}>
+                                return (<Form.Item name={[field.name, "first"]} label={`${index + 1}-Student`}>
                                     <Input placeholder="First Name" />
                                 </Form.Item>
+                                );
                             })}
+                            <Form.Item>
+                                <Button
+                                    icon={<PlusOutlined />}
+                                    type="dashed"
+                                    block
+                                >
+                                    Add a Student
+                                </Button>
+                            </Form.Item>
                         </>
                     )}
                 </Form.List>
