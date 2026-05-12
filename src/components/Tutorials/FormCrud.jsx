@@ -2,6 +2,9 @@ import { PlusOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 
 export default function FormCrudTab() {
+    const onFinish = (values) => {
+
+    }
     return (
         <div
             style={{
@@ -11,7 +14,7 @@ export default function FormCrudTab() {
                 minHeight: "100vh"
             }}
         >
-            <Form>
+            <Form onFinish={onFinish}>
                 <Form.Item name={"teacher"} label="Teacher Name">
                     <Input placeholder="Teacher Name" />
                 </Form.Item>
@@ -22,9 +25,14 @@ export default function FormCrudTab() {
                     {(fields, { add, remove }) => (
                         <>
                             {fields.map((field, index) => {
-                                return (<Form.Item name={[field.name, "first"]} label={`${index + 1}-Student`}>
-                                    <Input placeholder="First Name" />
-                                </Form.Item>
+                                return (
+                                    <Form.Item
+                                        key={field.key}
+                                        name={[field.name, "first"]}
+                                        label={`${index + 1}-Student`}
+                                    >
+                                        <Input placeholder="First Name" />
+                                    </Form.Item>
                                 );
                             })}
                             <Form.Item>
@@ -42,6 +50,12 @@ export default function FormCrudTab() {
                         </>
                     )}
                 </Form.List>
+                <Button
+                    htmlType="submit"
+                    type="primary"
+                >
+                    Submit
+                </Button>
             </Form>
         </div>
     );
