@@ -32,6 +32,7 @@ import CarouselTab from "./Carousel";
 import StepsTab from "./Steps";
 import AccordionTab from "./accordion";
 import ToggleSwitchTab from "./ToggleSwitch";
+import FormCrudTab from "./FormCrud";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -229,6 +230,11 @@ export default function Tutorial() {
             key: "30",
             label: "ToggleSwitch",
             children: <ToggleSwitchTab />
+        },
+        {
+            key: "31",
+            label: "FormCrud",
+            children: <FormCrudTab />
         },
     ];
 
