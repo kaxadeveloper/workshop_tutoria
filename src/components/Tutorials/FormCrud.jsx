@@ -14,6 +14,9 @@ export default function FormCrudTab() {
               <Form.Item name={"teacher"} label="Teacher Name">
                   <Input placeholder="Teacher Name"/>
               </Form.Item>
+              <Form.Item name={"class"} label="Class Name">
+                  <Input placeholder="Class Name"/>
+              </Form.Item>
             </Form>
         </div>
     );
