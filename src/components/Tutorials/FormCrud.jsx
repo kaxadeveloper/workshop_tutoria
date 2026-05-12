@@ -14,7 +14,7 @@ export default function FormCrudTab() {
                 minHeight: "100vh"
             }}
         >
-            <Form onFinish={onFinish}>
+            <Form onFinish={onFinish} style={{ width: 500 }}>
                 <Form.Item name={"teacher"} label="Teacher Name">
                     <Input placeholder="Teacher Name" />
                 </Form.Item>
@@ -38,10 +38,9 @@ export default function FormCrudTab() {
                                             <Input placeholder="First Name" />
                                         </Form.Item>
                                         <Form.Item
-                                            name={[field.name, "first"]}
-                                            label={`${index + 1}-Student`}
-                                        >
-                                            <Input placeholder="First Name" />
+                                            name={[field.name, "last"]}
+                                            >
+                                            <Input placeholder="Last Name" />
                                         </Form.Item>
                                     </Space>
                                 );
