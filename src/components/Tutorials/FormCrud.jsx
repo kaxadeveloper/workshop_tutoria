@@ -1,4 +1,4 @@
-import { PlusOutlined } from "@ant-design/icons";
+import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import { Button, Form, Input, Select, Space } from "antd";
 
 export default function FormCrudTab() {
@@ -34,6 +34,7 @@ export default function FormCrudTab() {
                                         <Form.Item
                                             name={[field.name, "first"]}
                                             label={`${index + 1}-Student`}
+                                            rules={[{ required: true, message: "First name required." }]}
                                         >
                                             <Input placeholder="First Name" />
                                         </Form.Item>
@@ -52,6 +53,9 @@ export default function FormCrudTab() {
                                                 })}
                                             </Select>
                                         </Form.Item>
+                                        <MinusCircleOutlined style={{ height: 40, color: "red" }} onClick={() => {
+                                            remove(field.name);
+                                        }} />
                                     </Space>
                                 );
                             })}
