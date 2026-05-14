@@ -11,25 +11,33 @@ export default function SideMenuTab() {
             }}
         >
             <Menu
+                onClick={({ key }) => {
+
+                }}
                 items={[
                     {
                         label: "Home",
+                        key: "/",
                         icon: <HomeOutlined />
                     },
                     {
                         label: "Dashboard",
+                        key: "/dashboard",
                         icon: <DashboardOutlined />
                     },
                     {
                         label: "Users List",
+                        key: "/usersList",
                         icon: <UnorderedListOutlined />
                     },
                     {
                         label: "Profile",
+                        key: "/profile",
                         icon: <UserOutlined />
                     },
                     {
                         label: "Signout",
+                        key: "signout",
                         icon: <PoweroffOutlined />,
                         danger: true
                     },
