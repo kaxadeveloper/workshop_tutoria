@@ -78,6 +78,7 @@ function SideMenu() {
                     navigate(key);
                 }
             }}
+            defaultSelectedKeys={[window.location.pathname]}
             items={[
                 {
                     label: "Home",
@@ -92,7 +93,17 @@ function SideMenu() {
                 {
                     label: "Users List",
                     key: "/usersList",
-                    icon: <UnorderedListOutlined />
+                    icon: <UnorderedListOutlined />,
+                    children: [
+                        {
+                            label: "Active Users",
+                            key: "/activeUsers"
+                        },
+                        {
+                            label: "Disabled users",
+                            key: "/disabledUsers"
+                        }
+                    ],
                 },
                 {
                     label: "Profile",
