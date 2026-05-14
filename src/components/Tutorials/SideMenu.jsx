@@ -2,7 +2,12 @@ import { Menu } from "antd";
 
 export default function SideMenuTab() {
     return (
-        <div>
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "row",
+            }}
+        >
             <Menu
                 items={[
                     { label: "Home" },
@@ -12,6 +17,7 @@ export default function SideMenuTab() {
                     { label: "Signout" },
                 ]}
             ></Menu>
+            <div>Content</div>
         </div>
     );
 }
