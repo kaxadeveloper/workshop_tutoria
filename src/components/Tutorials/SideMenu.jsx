@@ -5,11 +5,23 @@ const { Header: AntHeader } = Layout;
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 export default function SideMenuTab() {
-    const navigate = useNavigate();
     return (
-        <div>
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+                height: "100vh"
+            }}
+        >
             <Header />
-            <div>
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    flex: 1
+                }}
+            >
                 <SideMenu />
                 <Content />
             </div>
@@ -19,20 +31,45 @@ export default function SideMenuTab() {
 }
 
 function Header() {
-    return <div>Header</div>
+    return (
+        <div
+            style={{
+                height: 60,
+                backgroundColor: "lightskyblue",
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: "bold",
+            }}
+        >
+            Header
+        </div>
+    );
 }
 
 function Footer() {
-    return <div>Footer</div>
+    return (
+        <div
+            style={{
+                height: 60,
+                backgroundColor: "lightgray",
+                color: "black",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: "bold",
+            }}
+        >
+            Footer
+        </div>
+    );
 }
 
 function SideMenu() {
-    return (<div
-        style={{
-            display: "flex",
-            flexDirection: "row",
-        }}
-    >
+    const navigate = useNavigate();
+
+    return (
         <Menu
             onClick={({ key }) => {
                 if (key === "signout") {
@@ -70,7 +107,7 @@ function SideMenu() {
                 },
             ]}
         ></Menu>
-    </div>)
+    );
 }
 
 function Content() {
