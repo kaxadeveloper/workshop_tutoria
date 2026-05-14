@@ -1,8 +1,9 @@
 import { DashboardOutlined, HomeOutlined, PoweroffOutlined, UnorderedListOutlined, UserOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 export default function SideMenuTab() {
+    const navigate = useNavigate();
     return (
         <div
             style={{
@@ -12,7 +13,11 @@ export default function SideMenuTab() {
         >
             <Menu
                 onClick={({ key }) => {
+                    if (key === "signout") {
 
+                    } else {
+                        navigate(key);
+                    }
                 }}
                 items={[
                     {
