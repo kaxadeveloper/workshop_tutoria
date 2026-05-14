@@ -33,6 +33,7 @@ import StepsTab from "./Steps";
 import AccordionTab from "./accordion";
 import ToggleSwitchTab from "./ToggleSwitch";
 import FormCrudTab from "./FormCrud";
+import SideMenuTab from "./SideMenu";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -235,6 +236,11 @@ export default function Tutorial() {
             key: "31",
             label: "FormCrud",
             children: <FormCrudTab />
+        },
+        {
+            key: "32",
+            label: "SideMenu",
+            children: <SideMenuTab />
         },
     ];
 
