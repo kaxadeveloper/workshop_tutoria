@@ -17,7 +17,15 @@ export default function SideMenuTab() {
                     { label: "Signout" },
                 ]}
             ></Menu>
-            <div>Content</div>
+            <Content />
+        </div>
+    );
+}
+
+function Content() {
+    return (
+        <div>
+           
         </div>
     );
 }
