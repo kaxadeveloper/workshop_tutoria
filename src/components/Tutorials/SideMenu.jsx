@@ -1,4 +1,4 @@
-import { HomeOutlined } from "@ant-design/icons";
+import { DashboardOutlined, HomeOutlined, PoweroffOutlined, UnorderedListOutlined, UserOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import { Routes, Route } from 'react-router-dom';
 
@@ -12,13 +12,27 @@ export default function SideMenuTab() {
         >
             <Menu
                 items={[
-                    { label: "Home",
-                        icon:<HomeOutlined />
-                     },
-                    { label: "Dashboard" },
-                    { label: "Users List" },
-                    { label: "Profile" },
-                    { label: "Signout" },
+                    {
+                        label: "Home",
+                        icon: <HomeOutlined />
+                    },
+                    {
+                        label: "Dashboard",
+                        icon: <DashboardOutlined />
+                    },
+                    {
+                        label: "Users List",
+                        icon: <UnorderedListOutlined />
+                    },
+                    {
+                        label: "Profile",
+                        icon: <UserOutlined />
+                    },
+                    {
+                        label: "Signout",
+                        icon: <PoweroffOutlined />,
+                        danger: true
+                    },
                 ]}
             ></Menu>
             <Content />
