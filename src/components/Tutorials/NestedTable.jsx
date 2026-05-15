@@ -49,6 +49,7 @@ export default function NestedTableTab() {
                     },
                     defaultExpandAllRows: false,
                     defaultExpandedRowKeys: [],
+                    expandRowByClick: true,
                     expandIcon: ({ expanded, onExpand, record }) => {
                         if (record.age >= 6) return null
                         return (
