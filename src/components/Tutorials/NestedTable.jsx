@@ -16,10 +16,11 @@ export default function NestedTableTab() {
     const dataSource = [];
     for (let index = 1; index < 7; index++) {
         dataSource.push({
+            key: index,
             name: "Name " + index,
             age: index,
             address: "Address " + index,
-            description: "Description " + index, 
+            description: "Description " + index,
         });
     }
     return (
@@ -31,7 +32,7 @@ export default function NestedTableTab() {
                     rowExpandable: (record) => true,
                     expandedRowRender: (record) => {
                         return <p>{record.description}</p>;
-                    }
+                    },
                 }}
             ></Table>
         </div>
