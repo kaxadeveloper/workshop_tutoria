@@ -41,11 +41,12 @@ export default function NestedTableTab() {
                 expandable={{
                     rowExpandable: (record) => record.age < 6,
                     expandedRowRender: (record) => {
-                        if (record.age == 4) {
+                        if (record.age === 4) {
                             return <Table columns={nestedColumns} dataSource={dataSource}></Table>
                         }
                         return <p>{record.description}</p>;
                     },
+                    defaultExpandAllRows: false,
                 }}
             ></Table>
         </div>
