@@ -1,3 +1,4 @@
+import { MinusCircleTwoTone, PlusCircleTwoTone } from "@ant-design/icons";
 import { Table } from "antd";
 
 export default function NestedTableTab() {
@@ -48,6 +49,22 @@ export default function NestedTableTab() {
                     },
                     defaultExpandAllRows: false,
                     defaultExpandedRowKeys: [],
+                    expandIcon: ({ expanded, onExpand, record }) => {
+                        return (
+                            expanded ? (<MinusCircleTwoTone
+                                onClick={(e) => {
+                                    onExpand(record, e)
+                                }}
+                            />
+                            ) : (
+                                <PlusCircleTwoTone
+                                    onClick={(e) => {
+                                        onExpand(record, e);
+                                    }}
+                                />
+                            )
+                        );
+                    }
                 }}
             ></Table>
         </div>
