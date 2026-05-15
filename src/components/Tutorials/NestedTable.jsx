@@ -47,6 +47,7 @@ export default function NestedTableTab() {
                         return <p>{record.description}</p>;
                     },
                     defaultExpandAllRows: false,
+                    defaultExpandedRowKeys: [],
                 }}
             ></Table>
         </div>
