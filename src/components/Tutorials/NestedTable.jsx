@@ -21,16 +21,29 @@ export default function NestedTableTab() {
             age: index,
             address: "Address " + index,
             description: "Description " + index,
+            companyName: 'Company Name' + index,
+            companyStrength: index * index,
         });
     }
+    const nestedColumns = [{
+        title: 'Company Name',
+        dataIndex: 'companyName'
+    },
+    {
+        title: 'Company Strength',
+        dataIndex: 'companyStrength'
+    }]
     return (
         <div>
             <Table
                 columns={columns}
                 dataSource={dataSource}
                 expandable={{
-                    rowExpandable: (record) => true,
+                    rowExpandable: (record) => record.age < 6,
                     expandedRowRender: (record) => {
+                        if (record.age == 4) {
+                            return <Table columns={nestedColumns} dataSource={dataSource}></Table>
+                        }
                         return <p>{record.description}</p>;
                     },
                 }}
