@@ -1,12 +1,22 @@
 import { Button, Form, Input } from "antd";
 
-function PlayerScors(props) {
-
+function PlayerScors({ value, onChange }) {
     return
     <>
-     <Button>-</Button>
-     <span>{props.value}</span>
-     <Button>+</Button>
+        <Button onClick={() => {
+            onChange(value - 1)
+        }}
+        >
+            -
+        </Button>
+        <span>{value}</span>
+        <Button
+            onClick={() => {
+                onChange(value + 1)
+            }}
+        >
+            +
+        </Button>
     </>
 }
 
@@ -20,6 +30,7 @@ export default function FormControlsTab() {
                 onFinishFailed={(failedValues) => {
 
                 }}
+                initialValues={{ playerScore: 0 }}
             >
                 <Form.Item
                     name={"playerName"}
@@ -30,8 +41,8 @@ export default function FormControlsTab() {
                     <Input />
                 </Form.Item>
                 <Form.Item
-                    name={"playerName"}
-                    label="Player Name"
+                    name={"playerScore"}
+                    label="Player Score"
                     required
                     rules={[{ required: true, message: "Please enter player name." }]}
                 >
