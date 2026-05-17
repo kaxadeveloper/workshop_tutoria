@@ -44,7 +44,17 @@ export default function FormControlsTab() {
                     name={"playerScore"}
                     label="Player Score"
                     required
-                    rules={[{ required: true, message: "Please enter player name." }]}
+                    rules={[{
+                        validator(rule, value) {
+                          return new Promise((resolve, reject) => {
+                            if (value >= 0) {
+                                resolve()
+                            } else {
+                                reject("The score should be greater than 0.");
+                            }
+                          })
+                        }
+                    }]}
                 >
                     <PlayerScors />
                 </Form.Item>
