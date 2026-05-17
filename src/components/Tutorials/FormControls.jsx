@@ -5,12 +5,13 @@ export default function FormControlsTab() {
         <div>
             <Form
                 onFinish={(values) => {
-                   
+
                 }}>
                 <Form.Item
                     name={"playerName"}
                     label="Player Name"
-                    required rules={[{}]}
+                    required
+                    rules={[{ required: true, message: "Please enter player name." }]}
                 >
                     <Input />
                 </Form.Item>
