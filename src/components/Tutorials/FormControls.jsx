@@ -1,16 +1,23 @@
-import { Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 
 export default function FormControlsTab() {
     return (
         <div>
-            <Form>
+            <Form onFinish={(values) => {
+               
+            }}>
                 <Form.Item
                     name={"playerName"}
                     label="Player Name"
                 >
                     <Input />
                 </Form.Item>
-                
+                <Button
+                    htmlType="submit"
+                    type="primary"
+                >
+                    Submit
+                </Button>
             </Form>
         </div>
     );
