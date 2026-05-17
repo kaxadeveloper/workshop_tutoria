@@ -21,7 +21,9 @@ function PlayerScors({ value, onChange }) {
     );
 }
 
-
+function AdminEmail({ value }) {
+    return <span>{value}</span>
+}
 
 export default function FormControlsTab() {
     return (
@@ -33,7 +35,7 @@ export default function FormControlsTab() {
                 onFinishFailed={(failedValues) => {
 
                 }}
-                initialValues={{ playerScore: 0 }}
+                initialValues={{ playerScore: 0, adminEmail: "admin@gmail.com" }}
             >
                 <Form.Item
                     name={"playerName"}
@@ -60,6 +62,30 @@ export default function FormControlsTab() {
                     }]}
                 >
                     <PlayerScors />
+                </Form.Item>
+                <Form.Item
+                    name={"adminEmail"}
+                    label="Admin Email"
+                    required
+                    rules={[
+                        {
+                            type: 'email',
+                            message: 'It is not a valid email.',
+                        },
+                        {
+                            validator(rule, value) {
+                                return new Promise((resolve, reject) => {
+                                    if (String(value).startsWith('admin')) {
+                                        resolve();
+                                    } else {
+                                        reject("The email should start with admin keyword.");
+                                    }
+                                })
+                            }
+                        }
+                    ]}
+                >
+                    <AdminEmail />
                 </Form.Item>
                 <Button
                     htmlType="submit"
