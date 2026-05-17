@@ -35,6 +35,7 @@ import ToggleSwitchTab from "./ToggleSwitch";
 import FormCrudTab from "./FormCrud";
 import SideMenuTab from "./SideMenu";
 import NestedTableTab from "./NestedTable";
+import FormControlsTab from "./FormControls";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -247,6 +248,11 @@ export default function Tutorial() {
             key: "33",
             label: "NestedTable",
             children: <NestedTableTab />
+        },
+        {
+            key: "34",
+            label: "FormControls",
+            children: <FormControlsTab />
         },
     ];
 
