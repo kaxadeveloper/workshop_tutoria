@@ -1,20 +1,30 @@
 import { Input, Table } from "antd";
+import { useState } from "react";
 
 export default function GlobalSearchTab() {
+    const [searchedText, setSearchedText] = useState("");
     return (
         <div>
             <Input.Search placeholder="Search here..."
                 style={{
                     marginBottom: 8
                 }}
+                onSearch={(value) => {
+                    setSearchedText(value);
+                }}
+                onChange={(e) => {
+                    setSearchedText(e.target.value);
+                }}
             />
             <Table
                 columns={[{
                     title: "Name",
                     dataIndex: "name",
-                    filteredValue: ["A"],
+                    filteredValue: [searchedText],
                     onFilter: (value, record) => {
-                        return record.name.includes(value);
+                        return String(record.name)
+                            .toLowerCase()
+                            .includes(value.toLocaleLowerCase());
                     }
                 },
                 {
