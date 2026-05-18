@@ -1,8 +1,13 @@
-import { Table } from "antd";
+import { Input, Table } from "antd";
 
 export default function GlobalSearchTab() {
     return (
         <div>
+            <Input.Search placeholder="Search here..."
+                style={{
+                    marginBottom: 8
+                }}
+            />
             <Table
                 columns={[{
                     title: "Name",

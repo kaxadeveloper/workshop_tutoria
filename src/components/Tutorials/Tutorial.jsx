@@ -36,6 +36,7 @@ import FormCrudTab from "./FormCrud";
 import SideMenuTab from "./SideMenu";
 import NestedTableTab from "./NestedTable";
 import FormControlsTab from "./FormControls";
+import GlobalSearchTab from "./GlobalSearch";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -253,6 +254,11 @@ export default function Tutorial() {
             key: "34",
             label: "FormControls",
             children: <FormControlsTab />
+        },
+        {
+            key: "35",
+            label: "GlobalSearch",
+            children: <GlobalSearchTab />
         },
     ];
 
