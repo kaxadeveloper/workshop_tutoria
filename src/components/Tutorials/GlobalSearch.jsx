@@ -17,7 +17,26 @@ export default function GlobalSearchTab() {
                     dataIndex: "address"
                 },
                 ]}
-                
+                dataSource={[
+                    {
+                        key: 1,
+                        name: "A Name",
+                        age: 10,
+                        address: "A Name"
+                    },
+                    {
+                        key: 1,
+                        name: "B Name",
+                        age: 20,
+                        address: "B Name"
+                    },
+                    {
+                        key: 1,
+                        name: "C Name",
+                        age: 30,
+                        address: "C Name"
+                    },
+                ]}
             >
 
             </Table>
