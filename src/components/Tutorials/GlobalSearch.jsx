@@ -50,13 +50,67 @@ export default function GlobalSearchTab() {
                         address: "A Address"
                     },
                     {
-                        key: 1,
+                        key: 2,
                         name: "B Name",
                         age: 20,
                         address: "B Address"
                     },
                     {
-                        key: 1,
+                        key: 3,
+                        name: "C Name",
+                        age: 30,
+                        address: "C Address"
+                    },
+                    {
+                        key: 4,
+                        name: "A Name",
+                        age: 10,
+                        address: "A Address"
+                    },
+                    {
+                        key: 5,
+                        name: "B Name",
+                        age: 20,
+                        address: "B Address"
+                    },
+                    {
+                        key: 6,
+                        name: "C Name",
+                        age: 30,
+                        address: "C Address"
+                    },
+                    {
+                        key: 7,
+                        name: "A Name",
+                        age: 10,
+                        address: "A Address"
+                    },
+                    {
+                        key: 8,
+                        name: "B Name",
+                        age: 20,
+                        address: "B Address"
+                    },
+                    {
+                        key: 9,
+                        name: "C Name",
+                        age: 30,
+                        address: "C Address"
+                    },
+                    {
+                        key: 10,
+                        name: "A Name",
+                        age: 10,
+                        address: "A Address"
+                    },
+                    {
+                        key: 11,
+                        name: "B Name",
+                        age: 20,
+                        address: "B Address"
+                    },
+                    {
+                        key: 12,
                         name: "C Name",
                         age: 30,
                         address: "C Address"
