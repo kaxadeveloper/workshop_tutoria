@@ -11,7 +11,11 @@ export default function GlobalSearchTab() {
             <Table
                 columns={[{
                     title: "Name",
-                    dataIndex: "name"
+                    dataIndex: "name",
+                    filteredValue: ["A"],
+                    onFilter: (value, record) => {
+                        return record.name.includes(value);
+                    }
                 },
                 {
                     title: "Age",
