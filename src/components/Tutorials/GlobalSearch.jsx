@@ -24,7 +24,13 @@ export default function GlobalSearchTab() {
                     onFilter: (value, record) => {
                         return String(record.name)
                             .toLowerCase()
-                            .includes(value.toLocaleLowerCase());
+                            .includes(value.toLowerCase()) ||
+                            String(record.age)
+                                .toLowerCase()
+                                .includes(value.toLowerCase()) ||
+                            String(record.address)
+                                .toLowerCase()
+                                .includes(value.toLowerCase());
                     }
                 },
                 {
@@ -41,24 +47,22 @@ export default function GlobalSearchTab() {
                         key: 1,
                         name: "A Name",
                         age: 10,
-                        address: "A Name"
+                        address: "A Address"
                     },
                     {
                         key: 1,
                         name: "B Name",
                         age: 20,
-                        address: "B Name"
+                        address: "B Address"
                     },
                     {
                         key: 1,
                         name: "C Name",
                         age: 30,
-                        address: "C Name"
+                        address: "C Address"
                     },
                 ]}
-            >
-
-            </Table>
+            ></Table>
         </div>
     );
 }
