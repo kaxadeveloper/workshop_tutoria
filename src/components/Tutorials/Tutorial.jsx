@@ -37,6 +37,7 @@ import SideMenuTab from "./SideMenu";
 import NestedTableTab from "./NestedTable";
 import FormControlsTab from "./FormControls";
 import GlobalSearchTab from "./GlobalSearch";
+import ScrollTab from "./ScrollTab";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -259,6 +260,11 @@ export default function Tutorial() {
             key: "35",
             label: "GlobalSearch",
             children: <GlobalSearchTab />
+        },
+        {
+            key: "36",
+            label: "ScrollTab",
+            children: <ScrollTab />
         },
     ];
 
