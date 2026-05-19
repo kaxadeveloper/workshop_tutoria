@@ -3,7 +3,7 @@ import { Table } from "antd";
 export default function ScrollTab() {
     const columns = [];
     const dataSource = [];
-    const numberOfColumns = 5;
+    const numberOfColumns = 20;
     const numberOfRows = 5;
     for (let index = 0; index < numberOfColumns; index++) {
         columns.push({
@@ -14,15 +14,17 @@ export default function ScrollTab() {
     for (let index = 0; index < numberOfRows; index++) {
         const rowData = {}
         for (let colIndex = 0; colIndex < numberOfColumns; colIndex++) {
-            rowData[`col_${colIndex + 1}`] = `R${index + 1}C${colIndex + 1}` 
+            rowData[`col_${colIndex + 1}`] = `R${index + 1}C${colIndex + 1}`
         }
         dataSource.push(rowData);
     }
     return (
         <div>
             <Table
+                style={{ maxWidth: 500 }}
                 columns={columns}
                 dataSource={dataSource}
+                
             ></Table>
         </div>
     );
