@@ -4,7 +4,7 @@ export default function ScrollTab() {
     const columns = [];
     const dataSource = [];
     const numberOfColumns = 20;
-    const numberOfRows = 5;
+    const numberOfRows = 20;
     for (let index = 0; index < numberOfColumns; index++) {
         columns.push({
             title: `Col ${index + 1}`,
