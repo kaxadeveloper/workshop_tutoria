@@ -14,10 +14,9 @@ export default function ScrollTab() {
     for (let index = 0; index < numberOfRows; index++) {
         const rowData = {}
         for (let colIndex = 0; colIndex < numberOfColumns; colIndex++) {
-            rowData[`col_${colIndex + 1}`] = `R${index + 1}C${colIndex + 1}`
-            
+            rowData[`col_${colIndex + 1}`] = `R${index + 1}C${colIndex + 1}` 
         }
-        
+        dataSource.push(rowData);
     }
     return (
         <div>
