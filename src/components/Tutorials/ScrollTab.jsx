@@ -24,7 +24,7 @@ export default function ScrollTab() {
                 style={{ maxWidth: 500 }}
                 columns={columns}
                 dataSource={dataSource}
-                
+                scroll={{ x: true }}
             ></Table>
         </div>
     );
