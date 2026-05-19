@@ -8,7 +8,9 @@ export default function ScrollTab() {
     for (let index = 0; index < numberOfColumns; index++) {
         columns.push({
             title: `Col ${index + 1}`,
-            dataIndex: `col_${index + 1}`
+            dataIndex: `col_${index + 1}`,
+            fixed:
+            index < 2 ? 'left' : index === numberOfColumns - 1 ? "right" : null 
         });
     }
     for (let index = 0; index < numberOfRows; index++) {
