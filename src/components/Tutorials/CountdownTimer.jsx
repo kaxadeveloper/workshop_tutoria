@@ -13,6 +13,17 @@ export default function CountdownTimerTab() {
                 value={new Date().setMinutes(new Date().getMinutes() + 2)}
                 valueStyle={{ color: "red" }}
             />
+            <Countdown
+                title={
+                    <p style={{ color: "blue" }}>
+                        <FieldTimeOutlined /> Countdown Timer
+                    </p>
+                }
+                value={new Date().setMinutes(new Date().getMinutes() + 2)}
+                valueStyle={{ color: "red" }}
+                prefix={"Sale Ending in"}
+                suffix={<p style={{ color: "green" }}>Hurry Up!</p>}
+            />
         </div>
     );
 }
