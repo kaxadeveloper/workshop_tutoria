@@ -1,6 +1,21 @@
 import { DollarCircleFilled, FieldTimeOutlined } from "@ant-design/icons";
 import { Divider, Statistic } from "antd";
-const { Countdown } = Statistic
+const { Countdown } = Statistic;
+
+const CustomCountdown = () => {
+    return (
+        <Countdown
+            title={
+                <p style={{ color: "blue" }}>
+                    <FieldTimeOutlined /> Countdown Timer
+                </p>
+            }
+            value={new Date().setMinutes(new Date().getMinutes() + 2)}
+            valueStyle={{ color: "red" }}
+        />
+    );
+}
+
 export default function CountdownTimerTab() {
     return (
         <div>
@@ -17,15 +32,16 @@ export default function CountdownTimerTab() {
                 title={
                     <p style={{ color: "blue" }}>
                         <Divider />
-                        <DollarCircleFilled style={{color: "gold"}}/> Sale
+                        <DollarCircleFilled style={{ color: "gold" }} /> Sale
                     </p>
                 }
                 format={"HH:mm:ss:SSS"}
                 value={new Date().setMinutes(new Date().getMinutes() + 2)}
                 valueStyle={{ color: "red" }}
-                prefix={<p style={{ color: "brown"}}> Sale Ending in</p>}
+                prefix={<p style={{ color: "brown" }}> Sale Ending in</p>}
                 suffix={<p style={{ color: "green" }}>Hurry Up!</p>}
             />
+            
         </div>
     );
 }
