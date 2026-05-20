@@ -19,6 +19,7 @@ export default function CountdownTimerTab() {
                         <FieldTimeOutlined /> Countdown Timer
                     </p>
                 }
+                format={"HH:mm:ss:SSS"}
                 value={new Date().setMinutes(new Date().getMinutes() + 2)}
                 valueStyle={{ color: "red" }}
                 prefix={<p style={{ color: "brown"}}>Sale Ending in</p>}
