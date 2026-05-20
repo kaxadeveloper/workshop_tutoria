@@ -14,7 +14,8 @@ const CustomCountdown = () => {
             onChange={(value) => {
                 setValue(value);
             }}
-            prefix={`Timer ending in ${value}`}
+            format={""}
+            prefix={`Timer ending in ${Math.round(value / 1000)}`}
         />
     );
 }
@@ -28,8 +29,11 @@ export default function CountdownTimerTab() {
                         <FieldTimeOutlined /> Countdown Timer
                     </p>
                 }
-                value={new Date().setMinutes(new Date().getMinutes() + 2)}
+                value={new Date().setSeconds(new Date().getSeconds() + 10)}
                 valueStyle={{ color: "red" }}
+                onFinish={() => {
+
+                }}
             />
             <Countdown
                 title={
