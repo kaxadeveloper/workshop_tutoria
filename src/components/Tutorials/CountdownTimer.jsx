@@ -21,7 +21,7 @@ export default function CountdownTimerTab() {
                 }
                 value={new Date().setMinutes(new Date().getMinutes() + 2)}
                 valueStyle={{ color: "red" }}
-                prefix={"Sale Ending in"}
+                prefix={<p style={{ color: "brown"}}>Sale Ending in</p>}
                 suffix={<p style={{ color: "green" }}>Hurry Up!</p>}
             />
         </div>
