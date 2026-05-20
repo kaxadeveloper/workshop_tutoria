@@ -1,5 +1,5 @@
 import { FieldTimeOutlined } from "@ant-design/icons";
-import { Statistic } from "antd";
+import { Divider, Statistic } from "antd";
 const { Countdown } = Statistic
 export default function CountdownTimerTab() {
     return (
@@ -16,6 +16,7 @@ export default function CountdownTimerTab() {
             <Countdown
                 title={
                     <p style={{ color: "blue" }}>
+                        <Divider />
                         <FieldTimeOutlined /> Countdown Timer
                     </p>
                 }
