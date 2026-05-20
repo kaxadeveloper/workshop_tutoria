@@ -41,6 +41,7 @@ export default function CountdownTimerTab() {
                 prefix={<p style={{ color: "brown" }}> Sale Ending in</p>}
                 suffix={<p style={{ color: "green" }}>Hurry Up!</p>}
             />
+            <Divider />
             
         </div>
     );
