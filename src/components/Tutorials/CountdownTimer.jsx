@@ -6,11 +6,12 @@ export default function CountdownTimerTab() {
         <div>
             <Countdown
                 title={
-                    <p>
+                    <p style={{ color: "blue" }}>
                         <FieldTimeOutlined /> Countdown Timer
                     </p>
                 }
                 value={new Date().setMinutes(new Date().getMinutes() + 2)}
+                valueStyle={{ color: "red" }}
             />
         </div>
     );
