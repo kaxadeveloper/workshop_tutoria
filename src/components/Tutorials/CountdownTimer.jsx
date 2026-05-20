@@ -1,4 +1,4 @@
-import { FieldTimeOutlined } from "@ant-design/icons";
+import { DollarCircleFilled, FieldTimeOutlined } from "@ant-design/icons";
 import { Divider, Statistic } from "antd";
 const { Countdown } = Statistic
 export default function CountdownTimerTab() {
@@ -17,7 +17,7 @@ export default function CountdownTimerTab() {
                 title={
                     <p style={{ color: "blue" }}>
                         <Divider />
-                        <FieldTimeOutlined /> Countdown Timer
+                        <DollarCircleFilled /> Sale
                     </p>
                 }
                 format={"HH:mm:ss:SSS"}
