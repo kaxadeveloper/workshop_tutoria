@@ -38,6 +38,7 @@ import NestedTableTab from "./NestedTable";
 import FormControlsTab from "./FormControls";
 import GlobalSearchTab from "./GlobalSearch";
 import ScrollTab from "./ScrollTab";
+import CountdownTimerTab from "./CountdownTimer";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -265,6 +266,11 @@ export default function Tutorial() {
             key: "36",
             label: "ScrollTab",
             children: <ScrollTab />
+        },
+        {
+            key: "37",
+            label: "CountdownTimer",
+            children: <CountdownTimerTab />
         },
     ];
 
