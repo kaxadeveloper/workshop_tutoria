@@ -1,17 +1,20 @@
 import { DollarCircleFilled, FieldTimeOutlined } from "@ant-design/icons";
 import { Divider, Statistic } from "antd";
+import { useState } from "react";
 const { Countdown } = Statistic;
 
 const CustomCountdown = () => {
+    const [value, setValue] = useState(0);
+
     return (
         <Countdown
-            title={
-                <p style={{ color: "blue" }}>
-                    <FieldTimeOutlined /> Countdown Timer
-                </p>
-            }
-            value={new Date().setMinutes(new Date().getMinutes() + 2)}
+            title={"Countdown 100 Seconds"}
+            value={new Date().setSeconds(new Date().getSeconds() + 100)}
             valueStyle={{ color: "red" }}
+            onChange={(value) => {
+                setValue(value);
+            }}
+            prefix={`Timer ending in ${value}`}
         />
     );
 }
@@ -42,7 +45,7 @@ export default function CountdownTimerTab() {
                 suffix={<p style={{ color: "green" }}>Hurry Up!</p>}
             />
             <Divider />
-            
+            <CustomCountdown />
         </div>
     );
 }
