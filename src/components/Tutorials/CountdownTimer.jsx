@@ -17,13 +17,13 @@ export default function CountdownTimerTab() {
                 title={
                     <p style={{ color: "blue" }}>
                         <Divider />
-                        <DollarCircleFilled /> Sale
+                        <DollarCircleFilled style={{color: "gold"}}/> Sale
                     </p>
                 }
                 format={"HH:mm:ss:SSS"}
                 value={new Date().setMinutes(new Date().getMinutes() + 2)}
                 valueStyle={{ color: "red" }}
-                prefix={<p style={{ color: "brown"}}>Sale Ending in</p>}
+                prefix={<p style={{ color: "brown"}}> Sale Ending in</p>}
                 suffix={<p style={{ color: "green" }}>Hurry Up!</p>}
             />
         </div>
