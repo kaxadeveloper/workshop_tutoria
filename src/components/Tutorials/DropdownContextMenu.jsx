@@ -1,23 +1,28 @@
+import { CopyOutlined, DeleteOutlined, ReloadOutlined, ShareAltOutlined } from "@ant-design/icons";
 import { Dropdown, Menu } from "antd";
 
 export default function DropdownContextMenuTab() {
     const menu = <Menu
         items={[
             {
-              label: "Copy",
-              key: "copy",
+                label: "Copy",
+                key: "copy",
+                icon: <CopyOutlined />,
             },
             {
-              label: "Share",
-              key: "share",
+                label: "Share",
+                key: "share",
+                icon: <ShareAltOutlined />,
             },
             {
-              label: "Reload",
-              key: "reload",
+                label: "Reload",
+                key: "reload",
+                icon: <ReloadOutlined />,
             },
             {
-              label: "Delete",
-              key: "delete",
+                label: "Delete",
+                key: "delete",
+                icon: <DeleteOutlined />,
             },
         ]}>
 
