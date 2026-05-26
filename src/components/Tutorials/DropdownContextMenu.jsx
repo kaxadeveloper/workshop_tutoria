@@ -3,7 +3,10 @@ import { Dropdown } from "antd";
 export default function DropdownContextMenuTab() {
     return (
         <div>
-            <Dropdown>
+            <Dropdown 
+            overlay={<p>This is a context menu</p>} 
+            trigger={["contextMenu"]}
+            >
                 <div
                     style={{
                         width: 200,
