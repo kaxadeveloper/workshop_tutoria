@@ -6,7 +6,19 @@ export default function DropdownContextMenuTab() {
             {
               label: "Copy",
               key: "copy",
-            }
+            },
+            {
+              label: "Share",
+              key: "share",
+            },
+            {
+              label: "Reload",
+              key: "reload",
+            },
+            {
+              label: "Delete",
+              key: "delete",
+            },
         ]}>
 
     </Menu>
