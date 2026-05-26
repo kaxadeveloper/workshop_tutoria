@@ -1,4 +1,4 @@
-import { CopyOutlined, DeleteOutlined, ReloadOutlined, ShareAltOutlined } from "@ant-design/icons";
+import { CopyOutlined, DeleteOutlined, FacebookFilled, InstagramFilled, ReloadOutlined, ShareAltOutlined, TwitterCircleFilled } from "@ant-design/icons";
 import { Dropdown, Menu } from "antd";
 
 export default function DropdownContextMenuTab() {
@@ -13,6 +13,23 @@ export default function DropdownContextMenuTab() {
                 label: "Share",
                 key: "share",
                 icon: <ShareAltOutlined />,
+                children: [
+                    {
+                        label: "Facebook",
+                        key: "fb",
+                        icon: <FacebookFilled />,
+                    },
+                    {
+                        label: "Twitter",
+                        key: "tw",
+                        icon: <TwitterCircleFilled />,
+                    },
+                    {
+                        label: "Instagram",
+                        key: "in",
+                        icon: <InstagramFilled />,
+                    },
+                ]
             },
             {
                 label: "Reload",
@@ -22,13 +39,21 @@ export default function DropdownContextMenuTab() {
             {
                 label: "Delete",
                 key: "delete",
+                danger: true,
                 icon: <DeleteOutlined />,
             },
         ]}>
 
     </Menu>
     return (
-        <div>
+        <div
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minHeight: "100vh",
+            }}
+        >
             <Dropdown
                 overlay={menu}
                 trigger={["contextMenu"]}
