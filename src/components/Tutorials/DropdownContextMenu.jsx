@@ -1,14 +1,20 @@
 import { Dropdown, Menu } from "antd";
 
 export default function DropdownContextMenuTab() {
-    const menu = <Menu>
-        
+    const menu = <Menu
+        items={[
+            {
+              label: "Copy",
+              key: "copy",
+            }
+        ]}>
+
     </Menu>
     return (
         <div>
-            <Dropdown 
-            overlay={<p>This is a context menu</p>} 
-            trigger={["contextMenu"]}
+            <Dropdown
+                overlay={}
+                trigger={["contextMenu"]}
             >
                 <div
                     style={{
