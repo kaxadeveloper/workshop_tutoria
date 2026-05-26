@@ -39,6 +39,7 @@ import FormControlsTab from "./FormControls";
 import GlobalSearchTab from "./GlobalSearch";
 import ScrollTab from "./ScrollTab";
 import CountdownTimerTab from "./CountdownTimer";
+import DropdownContextMenuTab from "./DropdownContextMenu";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -271,6 +272,11 @@ export default function Tutorial() {
             key: "37",
             label: "CountdownTimer",
             children: <CountdownTimerTab />
+        },
+        {
+            key: "38",
+            label: "DropdownContextMenu",
+            children: <DropdownContextMenuTab />
         },
     ];
 
