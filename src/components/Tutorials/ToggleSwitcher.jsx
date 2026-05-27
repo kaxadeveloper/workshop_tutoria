@@ -13,6 +13,11 @@ export default function ToggleSwitcherTab() {
             <Space size={12} direction="vertical">
                 <Switch />
                 <Switch defaultChecked={true} />
+                <Switch
+                    defaultChecked={true}
+                    checkedChildren="On"
+                    unCheckedChildren="Off"
+                />
             </Space>
         </div>
     )
