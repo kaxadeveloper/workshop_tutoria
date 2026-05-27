@@ -40,6 +40,7 @@ import GlobalSearchTab from "./GlobalSearch";
 import ScrollTab from "./ScrollTab";
 import CountdownTimerTab from "./CountdownTimer";
 import DropdownContextMenuTab from "./DropdownContextMenu";
+import ToggleSwitcherTab from "./ToggleSwitcher";
 
 // Curtain Menu Styles
 const classNames = createStaticStyles(({ css }) => ({
@@ -277,6 +278,11 @@ export default function Tutorial() {
             key: "38",
             label: "DropdownContextMenu",
             children: <DropdownContextMenuTab />
+        },
+        {
+            key: "39",
+            label: "ToggleSwitcher",
+            children: <ToggleSwitcherTab />
         },
     ];
 
