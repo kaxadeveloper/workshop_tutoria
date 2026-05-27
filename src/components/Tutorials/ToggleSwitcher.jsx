@@ -28,6 +28,9 @@ export default function ToggleSwitcherTab() {
                     defaultChecked={true}
                     checkedChildren={<CheckOutlined />}
                     unCheckedChildren={<CloseOutlined />}
+                    onChange={(checked) => {
+                        
+                    }}
                 />
             </Space>
         </div>
