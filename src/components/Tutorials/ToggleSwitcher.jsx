@@ -33,6 +33,10 @@ export default function ToggleSwitcherTab() {
                     }}
                     disabled={true}
                 />
+                <Switch
+                    defaultChecked={true}
+                    loading={true}
+                />
             </Space>
         </div>
     )
