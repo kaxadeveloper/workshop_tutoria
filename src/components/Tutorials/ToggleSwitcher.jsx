@@ -25,12 +25,13 @@ export default function ToggleSwitcherTab() {
                     unCheckedChildren="Longer text for Off"
                 />
                 <Switch
-                    defaultChecked={true}
+                    defaultChecked={false}
                     checkedChildren={<CheckOutlined />}
                     unCheckedChildren={<CloseOutlined />}
                     onChange={(checked) => {
-                        
+
                     }}
+                    disabled={true}
                 />
             </Space>
         </div>
