@@ -1,4 +1,4 @@
-import { Switch } from "antd";
+import { Space, Switch } from "antd";
 
 export default function ToggleSwitcherTab() {
     return (
@@ -10,8 +10,10 @@ export default function ToggleSwitcherTab() {
                 minHeight: "100vh",
             }}
         >
-            <Switch />
-            <Switch defaultChecked={true} />
+            <Space size={12} direction="vertical">
+                <Switch />
+                <Switch defaultChecked={true} />
+            </Space>
         </div>
     )
 }
