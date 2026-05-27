@@ -1,3 +1,4 @@
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { Space, Switch } from "antd";
 
 export default function ToggleSwitcherTab() {
@@ -22,6 +23,11 @@ export default function ToggleSwitcherTab() {
                     defaultChecked={true}
                     checkedChildren="Longer text for On"
                     unCheckedChildren="Longer text for Off"
+                />
+                <Switch
+                    defaultChecked={true}
+                    checkedChildren={<CheckOutlined />}
+                    unCheckedChildren={<CloseOutlined />}
                 />
             </Space>
         </div>
